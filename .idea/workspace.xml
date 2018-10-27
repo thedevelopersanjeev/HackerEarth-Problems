@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f6de8bc-c854-43ae-95d7-f4c8c2ac8f8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Achhe_Din.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Akash_and_the_Assignment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Alternate_Elements.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/ArrayInsert.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Array_Sum.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Binary_Queries.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Bishu_and_Soldiers.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Cipher.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Count Digits.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Count the Bits.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Dedication_Level.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Easy_Going.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Exploring_Ruins.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Factorial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Find_Product.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Football_Fest.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Houses_in_the_cities.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Max-K-Subarray.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Max_Profit.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Memorize_me.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Micro_Array_Update.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Modify_Sequence.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Mon_and_Real_Estate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Monk_Love_for_Food.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Monk_Welcome_Problem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Monk_and_Graph_Factory.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/NQueen.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Palindromic_String.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Play with Numbers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Remove Friends.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Rest_In_Peace.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Save_Patients.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Square_Transaction.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Toggle String.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/Toggle_String.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerEarth/minmax.py" beforeDir="false" />
-    </list>
+    <list default="true" id="4f6de8bc-c854-43ae-95d7-f4c8c2ac8f8f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +39,25 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-811169342">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -94,16 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HackerEarth/August Easy 2018/Problem2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Interview-Preparation-Kit-HackerRank/Trees/BinaryIndexTree.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -140,10 +124,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="27" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -153,6 +137,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,9 +162,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,10 +217,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25320512" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -267,16 +250,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HackerEarth/August Easy 2018/Problem3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HackerEarth/August Easy 2018/Problem1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -287,15 +260,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HackerEarth/August Easy 2018/Problem2.java">
+    <entry file="file://$PROJECT_DIR$/HackerEarth/August Easy 2018/Problem3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="45">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerEarth/August Easy 2018/Problem2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interview-Preparation-Kit-HackerRank/Trees/BinaryIndexTree.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
