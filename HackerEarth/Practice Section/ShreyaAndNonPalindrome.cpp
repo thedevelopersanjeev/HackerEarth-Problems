@@ -11,11 +11,13 @@ bool isPalindrome(string s){
 
 int check(string s){
     char ch = s[0];
-    
-    for(int i = 1; i < s.size(); i++){
-        if(s[i] == ch)
+    int i;
+    for(i = 1; i < s.size(); i++){
+        if(s[i] != ch)
             break;
     }
+    if(i == s.size())
+        return 0;
     if(isPalindrome(s))
        return s.size()-1;
 
@@ -25,6 +27,6 @@ int check(string s){
 int main(){
     string s;
     cin >>s;
-    
+    cout <<check(s);
     return 0;
 }
