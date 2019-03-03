@@ -39,6 +39,26 @@ int getCenter(int a, int b)
 	return min(getNode(a, dist/2), getNode(a, dist/2+1));
 }
 
+int getLCA(int a, int b)
+{
+	if(level[a] > level[b])
+		swap(a, b);
+	
+	int dist = level[b] - level[a];
+	
+	for(int i=17; i>=0; i--)
+		if(dist & (1<<i))
+			b = lca[i][b];
+	
+	if(a == b)
+		return a;
+	
+	for(int i=17; i>=0; i--)
+		if(lca[i][a] != lca[i][b])
+			a = lca[i][a], b = lca[i][b];
+	
+	return lca[0][a];
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
