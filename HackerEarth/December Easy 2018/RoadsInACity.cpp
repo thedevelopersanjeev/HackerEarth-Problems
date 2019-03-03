@@ -45,7 +45,6 @@ int getLCA(int a, int b)
 		swap(a, b);
 	
 	int dist = level[b] - level[a];
-	
 	for(int i=17; i>=0; i--)
 		if(dist & (1<<i))
 			b = lca[i][b];
