@@ -1,8 +1,3 @@
-/**
- *  Template for Contests
- * 
- *  @author Sanjeev
- */
 #include<bits/stdc++.h>
 using namespace std;
 
