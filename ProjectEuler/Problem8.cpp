@@ -9,15 +9,15 @@ int main() {
   string s;
   cin >> t;
   while (t--) {
-    cin >> n >> k >> s;
+    cin >> n >> k >>s;
     vector<int> digits(n);
     for (int i = 0; i < n; i++)
       digits[i] = s[i] - '0';
-    int ans = INT_MIN;
-    int i = 0;
+    long ans = INT_MIN;
+    long i = 0;
     while (i <= n - k) {
-      int count = 1, temp = 1;
-      for (int j = i; count <= k; j++, count++)
+      long count = 1, temp = 1;
+      for (long j = i; count <= k; j++, count++)
         temp *= digits[j];
       ans = max(ans, temp);
       i++;
