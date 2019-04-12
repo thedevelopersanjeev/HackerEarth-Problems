@@ -1,5 +1,5 @@
 /**
- *  Template for Contests
+ * Template for Contests
  * 
  *  @author Sanjeev
  */
