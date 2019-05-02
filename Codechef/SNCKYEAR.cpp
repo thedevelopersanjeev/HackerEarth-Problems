@@ -10,17 +10,14 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int t, n, s, e;
+    int t, n;
     cin >>t;
     while(t--){
         cin >>n;
-        int ans = 0;
-        while(n--){
-            cin >>s >>e;
-            if(e-s > 5)
-                ans++;
-        }
-        cout <<ans <<"\n";
+        if(n == 2010 || n == 2015 || n == 2016 || n == 2017 || n == 2019)
+            cout <<"HOSTED\n";
+        else 
+            cout <<"NOT HOSTED\n";
     }
     return 0;
 }
