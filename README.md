@@ -1,8 +1,7 @@
 # Competitive-Programming
 My Solution to Problems from various Competitive Programming websites.
 
-# LICENCE
-MIT License
+# MIT License
 
 Copyright (c) 2019 Sanjeev
 
