@@ -1,4 +1,6 @@
-[![HitCount](http://hits.dwyl.io/{username}/{project}.svg)](http://hits.dwyl.io/{username}/{project})
+![Forks](https://img.shields.io/github/forks/thedevelopersanjeev/Competitive-Programming.svg)
+
+![Commit](https://img.shields.io/github/commit-activity/m/thedevelopersanjeev/Competitive-Programming.svg)
 
 # Competitive-Programming
 My Solution to Problems from various Competitive Programming websites.
