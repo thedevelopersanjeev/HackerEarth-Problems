@@ -1,4 +1,10 @@
 # Competitive-Programming
+
+![Forks](https://img.shields.io/github/forks/thedevelopersanjeev/Competitive-Programming.svg)
+![Stars](https://img.shields.io/github/stars/thedevelopersanjeev/Competitive-Programming.svg)
+![Licence](https://img.shields.io/github/license/thedevelopersanjeev/Competitive-Programming.svg)
+
+
 My Solution to Problems from various Competitive Programming websites.
 
 # MIT License
