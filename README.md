@@ -1,7 +1,7 @@
+[![HitCount](http://hits.dwyl.io/{username}/{project}.svg)](http://hits.dwyl.io/{username}/{project})
+
 # Competitive-Programming
 My Solution to Problems from various Competitive Programming websites.
-
-[![HitCount](http://hits.dwyl.io/{username}/{project}.svg)](http://hits.dwyl.io/{username}/{project})
 
 # MIT License
 
