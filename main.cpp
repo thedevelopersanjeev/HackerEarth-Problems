@@ -1,8 +1,9 @@
-/**
- * Template for Contests
- *
- *  @author Sanjeev
- */
+/****************************************************
+*   Template for coding contests                    *
+*   Author    :    Sanjeev Sharma                   *
+*   Email     :    thedevelopersanjeev@gmail.com    *
+*****************************************************/
+
 #include <bits/stdc++.h>
 using namespace std;
 
