@@ -1,5 +1,5 @@
 // Find the subset of an array having minimum product
-// Brute Force Solution --
+// Brute Force Solution -- Not going to implement it obviously
 // Generate all subsets and return the minimum
 // Time Complexity - O(2^n)
 #include<bits/stdc++.h>
@@ -68,7 +68,7 @@ int solve(vector<int> &arr){
     if(zeros == 0 && negative == 0)
         return *min_element(arr.begin(), arr.end());
     /**
-     * Case 5 : There are some zeros and number of odd numbers 
+     * Case 5 : There are some zeros and number of negative numbers 
      * is odd, then answer will be product of all numbers
      * excluding zero
      */
