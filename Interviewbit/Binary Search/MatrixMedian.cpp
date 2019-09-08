@@ -25,7 +25,7 @@ int Solution::findMedian(vector<vector<int>> &matrix){
         if(cnt < desire)
             // median lies in right half
             mn = mid + 1;
-        else    
+        else
             // median lies in left half
             mx = mid;
 
