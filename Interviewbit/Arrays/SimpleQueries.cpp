@@ -2,6 +2,6 @@
 
 vector<int> Solution::solve(vector<int> &A, vector<int> &B) {
 
-
+    
 
 }
