@@ -7,12 +7,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define deb(x) cout <<#x <<" " <<x <<endl;
-
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
+    ifstream inf("input.txt");
+    ofstream ouf("output.txt");
     
     return 0;
 }
