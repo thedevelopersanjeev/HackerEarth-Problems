@@ -10,6 +10,9 @@
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 
+#define deb(x) cout << #x << " is " << x << "\n";
+const double PI = 2 * acos(0.0);
+
 using namespace std;
 
 int main(){
