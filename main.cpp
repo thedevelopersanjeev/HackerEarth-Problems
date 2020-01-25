@@ -8,7 +8,6 @@
 #pragma GCC optimize ("unroll-loops")
 #pragma GCC optimize("no-stack-protector,fast-math")
 #pragma GCC target ("sse4")
-#pragma comment(linker, "/stack:200000000")
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
