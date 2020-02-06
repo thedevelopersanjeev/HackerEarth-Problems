@@ -1,9 +1,7 @@
-vector<int> Solution::wave(vector<int> &arr){
-
-    sort(arr.begin(), arr.end());
-    int n = arr.size();
+vector<int> Solution::wave(vector<int> &A) {
+    sort(A.begin(), A.end());
+    int n = A.size();
     for(int i = 0; i < n - 1; i += 2)
-        swap(arr[i], arr[i+1]);
-    return arr;
-
+        swap(A[i], A[i+1]);
+    return A;
 }

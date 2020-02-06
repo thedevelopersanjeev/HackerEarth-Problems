@@ -1,4 +1,5 @@
-vector<vector<int>> Solution::solve(int n){
+vector<int> Solution::getRow(int n) {
+    n = n + 1;
     vector<vector<int>> ans(n);
     for(int i = 0; i < n; i++){
         vector<int> temp(i+1);
@@ -9,5 +10,5 @@ vector<vector<int>> Solution::solve(int n){
         temp[i] = 1;
         ans[i] = temp;
     }
-    return ans;
+    return ans[n-1];
 }

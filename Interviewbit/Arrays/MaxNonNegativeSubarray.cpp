@@ -1,23 +1,30 @@
-#include<bits/stdc++.h>
-
-vector<int> Solution::maxset(vector<int> &arr) {
-
-    long long maxSum = 0, currSum = 0;
-    vector<int> maxArray, currArray;
-    for(auto ele : arr){
-        if(ele >= 0){
-            currSum += ele;
-            currArray.push_back(ele);
+vector<int> Solution::maxset(vector<int> &A) {
+    int n = A.size();
+    long curr = 0, global = 0, j = 0, start = 0, end = 0;
+    if(all_of(A.begin(), A.end(), [](int i){
+        return i < 0;
+    })){
+        return vector<int>(0);
+    }
+    for(long i = 0; i < n; i++){
+        curr += A[i];
+        if(curr > global){
+            global = curr;
+            start = j;
+            end = i;
         }
-        else{
-            currSum = 0;
-            currArray.clear();
-        }
-        if((maxSum < currSum) || ((maxSum == currSum) && (currArray.size() > maxArray.size()))){
-            maxSum = currSum;
-            maxArray = currArray;
+        if(curr < 0 || A[i] < 0){
+            j = i + 1;
+            curr = 0;
         }
     }
-    return maxArray;
-
+    vector<int> ans;
+    for(long i = start; i <= end; i++)
+        ans.push_back(A[i]);
+    long i = end + 1;
+    while(i < n && A[i] == 0){
+        ans.push_back(0);
+        i++;
+    }
+    return ans;
 }

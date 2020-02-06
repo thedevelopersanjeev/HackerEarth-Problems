@@ -1,42 +1,43 @@
-#include<bits/stdc++.h>
-
 vector<vector<int>> Solution::generateMatrix(int n) {
-
-    int left = 0, right = n - 1, top = 0, bottom = n - 1;
-    int dir = 0;
-    int val = 1;
-    vector<vector<int>> ans(n, vector<int>(n, 0));
-    while(left <= right && top <= bottom){
-        if(dir == 0){
-            for(int i = left; i <= right; i++){
-                ans[top][i] = val;
-                val++;
-            }
-            top++;
+    vector<vector<int>> ans(n, vector<int>(n));
+    int direction = 0;
+    int top = 0, left = 0, bottom = n - 1, right = n - 1;
+    int curr = 1;
+    while(top <= bottom && left <= right){
+        switch(direction){
+            case 0 :
+                for(int j = left; j <= right; j++){
+                    ans[top][j] = curr;
+                    curr++;
+                }
+                top++;
+                direction = 1;
+            break;
+            case 1 :
+                for(int i = top; i <= bottom; i++){
+                    ans[i][right] = curr;
+                    curr++;
+                }
+                right--;
+                direction = 2;
+            break;
+            case 2 :
+                for(int j = right; j >= left; j--){
+                    ans[bottom][j] = curr;
+                    curr++;
+                }
+                bottom--;
+                direction = 3;
+            break;
+            case 3 :
+                for(int i = bottom; i >= top; i--){
+                    ans[i][left] = curr;
+                    curr++;
+                }
+                left++;
+                direction = 0;
+            break;
         }
-        else if(dir == 1){
-            for(int i = top; i <= bottom; i++){
-                ans[i][right] = val;
-                val++;
-            }
-            right--;
-        }
-        else if(dir == 2){
-            for(int i = right; i >= left; i--){
-                ans[bottom][i] = val;
-                val++;
-            }
-            bottom--;
-        }
-        else{
-            for(int i = bottom; i >= top; i--){
-                ans[i][left] = val;
-                val++;
-            }
-            left++;
-        }
-        dir = (dir + 1) % 4;
     }
     return ans;
-
 }

@@ -1,41 +1,32 @@
-#include<bits/stdc++.h>
-
-// Subarray with maximum number of 0s - maximum number of 1s
-vector<int> Solution::flip(string str) {
-
-    // length of the string
-    int len = str.size();
-    // number of zeros and ones
-    int zeros = 0, ones = 0;
-    // for marking starting variable of a subarray
-    int start = 0;
-    // for storing maximum number of 0s - maximum number of 1s
-    int max = INT_MIN;
-    // final answer for starting and ending index of subarray
-    int s = 0, e = 0;
-    for(int i = 0; i < len; i++){
-        if(str[i] == '0')
-            zeros++;
-        else 
-            ones++;
-        if(zeros - ones < 0){
-            // maximum reduced
-            start = i + 1;
-            zeros = 0;
-            ones = 0;
+vector<int> Solution::flip(string A) {
+    int n = A.size();
+    vector<int> arr(n);
+    bool flag = true;
+    for(int i = 0; i < n; i++){
+        if(A[i] == '1'){
+            arr[i] = -1;
         }
-        if(max < (zeros - ones)){
-            // new maximum found
-            max = zeros - ones;
-            s = start;
-            e = i;
+        else{
+            flag = false;
+            arr[i] = 1;
         }
     }
-    vector<int> ans;
-    if(max > 0){
-        ans.push_back(s + 1);
-        ans.push_back(e + 1);
+    if(flag){
+        return vector<int>(0);
     }
+    int curr = 0, global = 0, j = 0, start = 0, end = 0;
+    for(int i = 0; i < n; i++){
+        curr += arr[i];
+        if(curr > global){
+            global = curr;
+            start = j;
+            end = i;
+        }
+        if(curr < 0){
+            curr = 0;
+            j = i + 1;
+        }
+    }
+    vector<int> ans = {start + 1, end + 1};
     return ans;
-
 }

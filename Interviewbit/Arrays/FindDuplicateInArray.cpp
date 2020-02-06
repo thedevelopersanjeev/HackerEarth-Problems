@@ -1,16 +1,14 @@
-int Solution::repeatedNumber(const vector<int> &arr){
-    int t = arr[0];
-    int h = arr[0];
-    do{
-        t = arr[t];
-        h = arr[arr[h]];
-    }while(h != t);
-        
-    int p1 = arr[0];
-    int p2 = t;
-    while(p1 != p2){
-        p1 = arr[p1];
-        p2 = arr[p2];
+int Solution::repeatedNumber(const vector<int> &A) {
+    int slow = A[0];
+    int fast = A[A[0]];
+    while(slow != fast){
+        slow = A[slow];
+        fast = A[A[fast]];
     }
-    return p1;
+    slow = 0;
+    while(slow != fast){
+        slow = A[slow];
+        fast = A[fast];
+    }
+    return slow;
 }

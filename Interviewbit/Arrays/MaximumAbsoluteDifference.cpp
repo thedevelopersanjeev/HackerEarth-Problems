@@ -1,19 +1,17 @@
-#include<bits/stdc++.h>
-
-int Solution::maxArr(vector<int> &arr) {
-    
-    int max1 = INT_MIN;
-    int max2 = INT_MIN;
-    int min1 = INT_MAX;
-    int min2 = INT_MAX;
+int Solution::maxArr(vector<int> &A) {
+    int n = A.size();
+    int x1 = INT_MIN;
+    int x2 = INT_MIN;
+    int y1 = INT_MAX;
+    int y2 = INT_MAX;
     int ans = INT_MIN;
-    for(int i = 0; i < n; i++){
-        max1 = max(max1, arr[i] + i + 1);
-        min1 = min(min1, arr[i] + i + 1);
-        max2 = max(max2, arr[i] - i - 1);
-        min2 = min(min2, arr[i] - i - 1);
-        ans = max(ans, max(max1 - min1, max2 - min2));
+    for(int i = 1; i <= n; i++){
+        x1 = max(x1, A[i-1] - i);
+        x2 = max(x2, A[i-1] + i);
+        y1 = min(y1, A[i-1] - i);
+        y2 = min(y2, A[i-1] + i);
+        ans = max(ans, x1 - y1);
+        ans = max(ans, x2 - y2);
     }
     return ans;
-
 }

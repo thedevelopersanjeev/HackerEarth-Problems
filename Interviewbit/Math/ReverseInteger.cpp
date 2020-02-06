@@ -1,30 +1,29 @@
-#include<bits/stdc++.h>
-
-int Solution::reverse(int num){
-
-    bool flag = false;
-
-    if(num < 0){
-        num *= -1;
-        flag = true;
+int Solution::reverse(int A) {
+    bool isNegative = false;
+    if(A < 0){
+        A *= -1;
+        isNegative = true;
     }
-
-    if(num == 0)
-        return 0;
-
-    long long ans = 0;
-            
-    while(num != 0){
-        ans = (ans * 10) + (num % 10);
-        num /= 10;
+    int ans = 0;
+    int divisor = 1;
+    while(A / divisor >= 10){
+        divisor *= 10;
     }
-
-    if(flag)
-        ans *= -1;
-    
-    if(ans > INT_MAX || ans < INT_MIN)
+    int i = 0;
+    while(A > 0){
+        int left = A / divisor;
+        ans += (left * pow(10, i));
+        i++;
+        A %= divisor;
+        divisor /= 10;
+    }
+    // check overflow
+    if(ans == INT_MIN)
         return 0;
-    
-    return ans;
-
+    if(isNegative){
+        return ans * -1;
+    }
+    else{
+        return ans;
+    }
 }
