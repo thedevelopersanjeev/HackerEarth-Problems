@@ -24,9 +24,14 @@ template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 int main(){
-	ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
-    return 0; 
+    int x, y, z;
+    cin >>x >>y >>z;
+    if((x + y + z) >= 22)
+        cout <<"bust";
+    else 
+        cout <<"win";
+    return 0;
 }

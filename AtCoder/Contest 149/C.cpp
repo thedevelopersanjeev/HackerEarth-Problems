@@ -23,10 +23,24 @@ const double PI = 2 * acos(0.0);
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
+bool isprime(int n){
+    if(n <= 1)
+        return false;
+    for(int i = 2; i * i <= n; i++){
+        if(n % i == 0)
+            return false;
+    }
+    return true;
+}
+
 int main(){
-	ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
-    return 0; 
+    int n;
+    cin >>n;
+    while(!isprime(n))
+        n++;
+    cout <<n;
+    return 0;
 }

@@ -24,9 +24,18 @@ template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 int main(){
-	ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
-    return 0; 
+    string s;
+  	cin >>s;
+    int ans = 0, i = 0, j = s.size() - 1;
+    while(i < j){
+        if(s[i] != s[j])
+            ans++;
+        i++;
+        j--;
+    }
+    cout <<ans;
+    return 0;
 }
