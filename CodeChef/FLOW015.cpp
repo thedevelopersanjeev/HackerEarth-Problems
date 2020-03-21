@@ -27,6 +27,15 @@ int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	
+	int t;
+    cin >>t;
+    while(t--){
+        int y, total = 0;
+        cin >>y;
+        string s[7] = {"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
+        y = y - 1;
+        total = y + y / 4 + y / 400 - y / 100;
+        cout << s[total % 7] << endl;
+    }
 	return 0;
 }
