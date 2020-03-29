@@ -27,17 +27,19 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	long long k, n;
-	cin >>k >>n;
-	vector<long long> arr(n);
-	for(long long i = 0; i < n; i++)
-		cin >>arr[i];
-	long long mx = 0, prev = 0;
-	for(long long i = 0; i < n; i++) {
-		mx = max(mx, abs(prev - arr[i]));
-		prev = arr[i];
+	int n, m, s, c;
+	cin >> n >> m;
+	vector<int> num(n, -1);
+	while (m--) {
+		cin >> s >> c;
+		if (num[--s] != -1 && num[s] != c || n > 1 && !s && !c) {
+			cout << -1 << '\n';
+			return 0;
+		}
+		num[s] = c;
 	}
-	mx = max(mx, k - arr[n-1] + arr[0]);
-	cout <<k - mx;
+	for (int i = 0; i < n; ++i)
+		cout << (num[i] == -1 ? (n > 1 && !i) : num[i]);
+	cout << '\n';
 	return 0;
 }
