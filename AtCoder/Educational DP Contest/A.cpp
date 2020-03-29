@@ -20,13 +20,22 @@ using namespace std;
 using namespace __gnu_pbds;
 
 const double PI = 2 * acos(0.0);
-const long long INF = 1e18L + 5;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	
+	long long n;
+	cin >>n;
+	vector<long long> h(n);
+	for(long long i = 0; i < n; i++)
+		cin >>h[i];
+	vector<long long> dp(n, INT_MAX);
+	dp[0] = 0;
+	dp[1] = abs(h[1] - h[0]);
+	for(long long i = 2; i < n; i++)
+		dp[i] = min(dp[i-1] + abs(h[i] - h[i-1]), dp[i-2] + abs(h[i] - h[i-2]));
+	cout <<dp[n-1];
 	return 0;
 }

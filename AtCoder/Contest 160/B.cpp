@@ -20,13 +20,16 @@ using namespace std;
 using namespace __gnu_pbds;
 
 const double PI = 2 * acos(0.0);
-const long long INF = 1e18L + 5;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	
+	long long n;
+	cin >>n;
+	long long x = n / 500;
+	long long y = (n - (x * 500)) / 5;
+	cout <<(x * 1000) + (y * 5);
 	return 0;
 }

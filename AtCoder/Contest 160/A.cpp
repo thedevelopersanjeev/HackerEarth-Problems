@@ -20,13 +20,20 @@ using namespace std;
 using namespace __gnu_pbds;
 
 const double PI = 2 * acos(0.0);
-const long long INF = 1e18L + 5;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	
+	string s;
+	cin >>s;
+	// coffee
+	if(s[2] == s[3] && s[4] == s[5]) {
+		cout <<"Yes";
+	}
+	else {
+		cout <<"No";
+	}
 	return 0;
 }
