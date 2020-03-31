@@ -24,9 +24,13 @@ const long long INF = 1e18L + 5;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-int main(){
+int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+#endif
+
 	return 0;
 }
