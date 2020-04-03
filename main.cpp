@@ -14,23 +14,25 @@
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 
-#define deb(x) cout << #x << " is " << x << "\n";
-
-using namespace std;
 using namespace __gnu_pbds;
+using namespace std;
+
+#define deb(x) cout << #x << " is " << x << "\n";
+#define int long long
+#define mod 1000000007
 
 const double PI = 2 * acos(0.0);
 const long long INF = 1e18L + 5;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-int main() {
+int32_t main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 #ifndef ONLINE_JUDGE
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
-
+	
 	return 0;
 }
