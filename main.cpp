@@ -26,6 +26,32 @@ const long long INF = 1e18L + 5;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
+vector<int> Solution::solve(int n, vector<vector<int>> &queries) {
+
+	vector<int> arr(n, 0);
+	vector<int> ans;
+	for (auto query : queries) {
+		if (query[0] == 1) {
+			int i = query[1];
+			i--;
+			arr[i] = (2 * arr[i]) + 1;
+		}
+		else if (query[0] == 2) {
+			int i = query[1];
+			i--;
+			arr[i] = arr[i] / 2;
+		}
+		else {
+			int curr = 0;
+			for (int i = query[1]; i < query[2]; i++)
+				curr += __builtin_popcount(arr[i]);
+			ans.push_back(curr);
+		}
+	}
+	return ans;
+
+}
+
 int32_t main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
