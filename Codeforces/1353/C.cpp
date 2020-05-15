@@ -28,7 +28,17 @@ template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 void solve() {
-
+	int t, n;
+	cin >> t;
+	while (t--) {
+		cin >> n;
+		int ans = 0, k = 1;
+		for (int i = 1; i <= n / 2; i++) {
+			ans += (i * k * 8);
+			k++;
+		}
+		cout << ans << "\n";
+	}
 }
 
 int32_t main() {

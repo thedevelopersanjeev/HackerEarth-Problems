@@ -28,7 +28,26 @@ template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 void solve() {
-
+	int t, n, k;
+	cin >> t;
+	while (t--) {
+		cin >> n >> k;
+		vector<int> a(n), b(n);
+		for (int i = 0; i < n; i++)
+			cin >> a[i];
+		for (int i = 0; i < n; i++)
+			cin >> b[i];
+		sort(a.begin(), a.end());
+		sort(b.begin(), b.end());
+		int j = 0;
+		for (int i = 0; i < k; i++) {
+			if (b[n - i - 1] > a[j]) {
+				swap(a[j], b[n - i  - 1]);
+				j++;
+			}
+		}
+		cout << accumulate(a.begin(), a.end(), 0) << "\n";
+	}
 }
 
 int32_t main() {
