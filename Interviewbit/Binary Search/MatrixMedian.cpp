@@ -5,19 +5,19 @@ int Solution::findMedian(vector<vector<int>> &arr) {
 	int mn = INT_MAX;
 	int mx = INT_MIN;
 	int desire = ((m * n) + 1) / 2;
-	for(int i = 0; i < m; i++) {
+	for (int i = 0; i < m; i++) {
 		mn = min(mn, arr[i][0]);
-		mx = max(mx, arr[i][n-1]);
+		mx = max(mx, arr[i][n - 1]);
 	}
 	int lo = mn, hi = mx;
-	while(lo < hi) {
+	while (lo < hi) {
 		int mid = lo + (hi - lo) / 2;
 		int cnt = 0;
-		for(auto row : arr) {
+		for (auto row : arr) {
 			cnt += upper_bound(row.begin(), row.end(), mid) - row.begin();
-			
+
 		}
-		if(cnt < desire) {
+		if (cnt < desire) {
 			lo = mid + 1;
 		}
 		else {
