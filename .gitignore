@@ -1,6 +1,5 @@
-# ignore all utput files.
+# ignore all output files.
 *.out
 *.class
-*.vscode
 *.xml
-*iml
+*.iml
