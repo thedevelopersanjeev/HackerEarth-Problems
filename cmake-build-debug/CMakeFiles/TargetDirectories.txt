@@ -1,0 +1,3 @@
+/home/droidman/Downloads/competitive-programming/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/droidman/Downloads/competitive-programming/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/droidman/Downloads/competitive-programming/cmake-build-debug/CMakeFiles/competitive_programming.dir

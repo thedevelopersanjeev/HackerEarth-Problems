@@ -46,7 +46,13 @@ void write(T&&... args) {
 }
 
 void solve() {
-
+	int t, x, y, n;
+	read(t);
+	while(t--) {
+		read(x, y, n);
+		int temp = (n - y) / x;
+		cout << (temp * x) + y << "\n";
+	}
 }
 
 int32_t main() {

@@ -46,7 +46,14 @@ void write(T&&... args) {
 }
 
 void solve() {
-
+	int arr[5];
+	for(int i = 0; i < 5; i++)
+		cin >> arr[i];
+	int ans = -1;
+	for(int i = 0; i < 5; i++) 
+		if(arr[i] == 0) 
+			ans = i + 1;
+	cout << ans;
 }
 
 int32_t main() {

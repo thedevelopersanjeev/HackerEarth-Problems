@@ -46,7 +46,29 @@ void write(T&&... args) {
 }
 
 void solve() {
-
+	int t, n;
+	read(t);
+	while(t--) {
+		read(n);
+		int p3 = 0, p2 = 0;
+		while(n > 1 && n % 2 == 0) {
+			p2++;
+			n /= 2;
+		}
+		while(n > 1 && n % 3 == 0) {
+			p3++;
+			n /= 3;
+		}
+		if(n > 1 || p3 < p2) {
+			write(-1, "\n");
+			continue;
+		}
+		if(p2 == p3) {
+			write(p2, "\n");
+			continue;
+		}
+		write((2 * p3) - p2, "\n");
+	}
 }
 
 int32_t main() {

@@ -27,26 +27,34 @@ const long long INF = 1e18L + 5;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-template<class... Args>
-auto create(size_t n, Args&&... args) {
-	if constexpr(sizeof...(args) == 1)
-		return vector(n, args...);
-	else
-		return vector(n, create(args...));
-}
+// template<class... Args>
+// auto create(size_t n, Args&&... args) {
+// 	if constexpr(sizeof...(args) == 1)
+// 		return vector(n, args...);
+// 	else
+// 		return vector(n, create(args...));
+// }
 
-template<typename... T>
-void read(T&... args) {
-	((cin >> args), ...);
-}
+// template<typename... T>
+// void read(T&... args) {
+// 	((cin >> args), ...);
+// }
 
-template<typename... T>
-void write(T&&... args) {
-	((cout << args), ...);
+// template<typename... T>
+// void write(T&&... args) {
+// 	((cout << args), ...);
+// }
+
+string solveUtil(int i) {
+	return (i < 0 ? "" : solveUtil((i / 26) - 1) + (char)(65 + i % 26));
 }
 
 void solve() {
-
+	int n;
+	cin >> n;
+	string ans = solveUtil(n - 1);
+	for(auto ele : ans)
+		cout << (char)tolower(ele);
 }
 
 int32_t main() {

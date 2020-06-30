@@ -46,7 +46,17 @@ void write(T&&... args) {
 }
 
 void solve() {
-
+	int x, y;
+	cin >> x >> y;
+	bool flag = false;
+	for(int a = 0; a <= x; a++) {
+		int b = x - a;
+		if(((2 * a) + (4 * b)) == y) {
+			flag = true;
+			break;
+		}
+	}
+	cout << (flag ? "Yes" : "No");
 }
 
 int32_t main() {

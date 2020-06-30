@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/droidman/Downloads/competitive-programming/main.cpp
+bits/stdc++.h
+-
+ext/pb_ds/tree_policy.hpp
+-
+ext/pb_ds/assoc_container.hpp
+-
+

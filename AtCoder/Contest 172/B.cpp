@@ -27,35 +27,22 @@ const long long INF = 1e18L + 5;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-template<class... Args>
-auto create(size_t n, Args&&... args) {
-	if constexpr(sizeof...(args) == 1)
-		return vector(n, args...);
-	else
-		return vector(n, create(args...));
-}
-
-template<typename... T>
-void read(T&... args) {
-	((cin >> args), ...);
-}
-
-template<typename... T>
-void write(T&&... args) {
-	((cout << args), ...);
-}
-
 void solve() {
-
+	string s, t;
+	cin >> s >> t;
+	int n = s.size();
+	int ans = 0;
+	for(int i = 0; i < n; i++) {
+		if(s[i] != t[i]) {
+			ans++;
+		}
+	}
+	cout << ans;
 }
 
 int32_t main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
 	solve();
 	return 0;
 }

@@ -46,7 +46,23 @@ void write(T&&... args) {
 }
 
 void solve() {
-
+	int t, n;
+	string s;
+	read(t);
+	while(t--) {
+		read(n, s);
+		int o = 0, c = 0, ans = 0;
+		for(int i = 0; i < n; i++) {
+			if(s[i] == '(')
+				o++;
+			else 
+				c++;
+			if(c > o) {
+				ans = max(ans, c - o);
+			}
+		}
+		write(ans, "\n");
+	}
 }
 
 int32_t main() {

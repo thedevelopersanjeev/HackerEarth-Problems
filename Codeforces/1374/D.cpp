@@ -45,8 +45,25 @@ void write(T&&... args) {
 	((cout << args), ...);
 }
 
-void solve() {
+int t, n, k, ele;
+map<int, int> mp;
 
+void solve() {
+	read(t);
+	while (t--) {
+		mp.clear();
+		read(n, k);
+		while (n--) {
+			read(ele);
+			mp[ele % k]++;
+		}
+		int ans = 0;
+		for (auto x : mp) {
+			if (x.first != 0)
+				ans = max(ans, (x.second * k) - x.first);
+		}
+		write((ans != 0 ? ans + 1 : 0), "\n");
+	}
 }
 
 int32_t main() {
@@ -59,3 +76,15 @@ int32_t main() {
 	solve();
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
