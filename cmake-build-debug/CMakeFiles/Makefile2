@@ -74,12 +74,12 @@ clean: CMakeFiles/competitive_programming.dir/clean
 CMakeFiles/competitive_programming.dir/all:
 	$(MAKE) -f CMakeFiles/competitive_programming.dir/build.make CMakeFiles/competitive_programming.dir/depend
 	$(MAKE) -f CMakeFiles/competitive_programming.dir/build.make CMakeFiles/competitive_programming.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/droidman/Downloads/competitive-programming/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target competitive_programming"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/droidman/Downloads/competitive-programming/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target competitive_programming"
 .PHONY : CMakeFiles/competitive_programming.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/competitive_programming.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/droidman/Downloads/competitive-programming/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/droidman/Downloads/competitive-programming/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/competitive_programming.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/droidman/Downloads/competitive-programming/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/competitive_programming.dir/rule

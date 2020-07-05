@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/competitive_programming.dir/Interviewbit/Graphs/CowsAndSnacks.cpp.o"
   "CMakeFiles/competitive_programming.dir/main.cpp.o"
   "competitive_programming"
   "competitive_programming.pdb"
