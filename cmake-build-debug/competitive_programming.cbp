@@ -84,9 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/droidman/Downloads/competitive-programming/Interviewbit/Graphs/CowsAndSnacks.cpp">
-			<Option target="competitive_programming"/>
-		</Unit>
 		<Unit filename="/home/droidman/Downloads/competitive-programming/main.cpp">
 			<Option target="competitive_programming"/>
 		</Unit>

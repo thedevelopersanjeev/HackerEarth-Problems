@@ -45,16 +45,37 @@ void write(T&&... args) {
 }
 
 void solve() {
-
+    int n;
+    read(n);
+    vector<vector<char>> board(n, vector<char>(n));
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++)
+            read(board[i][j]);
+    }
+    if(board[0][0] == '*' || board[n - 1][n - 1] == '*'){
+        write(0);
+        return;
+    }
+    vector<vector<int>> dp(n, vector<int>(n, 0));
+    dp[0][0] = 1;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            if(i - 1 >= 0 && board[i - 1][j] == '.' && board[i][j] == '.')
+                dp[i][j] = dp[i - 1][j];
+            if(j - 1 >= 0 && board[i][j - 1] == '.' && board[i][j] == '.')
+                dp[i][j] = (dp[i][j] + dp[i][j - 1]) % mod;
+        }
+    }
+    write(dp[n - 1][n - 1]);
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
+// #ifndef ONLINE_JUDGE
+//     freopen("input.txt", "r", stdin);
+//     freopen("output.txt", "w", stdout);
+// #endif
     solve();
     return 0;
 }

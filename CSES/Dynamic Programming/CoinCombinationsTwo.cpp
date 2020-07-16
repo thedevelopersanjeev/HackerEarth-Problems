@@ -18,7 +18,7 @@ using namespace __gnu_pbds;
 using namespace std;
 
 #define deb(x) cout << #x << " is " << x << "\n"
-#define int long long
+// #define int long long
 #define mod 1000000007
 
 const double PI = 2 * acos(0.0);
@@ -45,16 +45,31 @@ void write(T&&... args) {
 }
 
 void solve() {
-
+    int n, x;
+    read(n, x);
+    vector<int> c(n);
+    for(int i = 0; i < n; i++)
+        read(c[i]);
+    vector<vector<int>> dp(n + 1, vector<int>(x + 1, 0));
+    dp[0][0] = 1;
+    for(int i = 1; i <= n; i++) {
+        for(int j = 0; j <= x; j++) {
+            dp[i][j] = dp[i - 1][j];
+            if(j - c[i - 1] >= 0) {
+                dp[i][j] = (dp[i][j] + dp[i][j - c[i - 1]]) % mod;
+            }
+        }
+    }
+    write(dp[n][x]);
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
+// #ifndef ONLINE_JUDGE
+//     freopen("input.txt", "r", stdin);
+//     freopen("output.txt", "w", stdout);
+// #endif
     solve();
     return 0;
 }

@@ -45,16 +45,30 @@ void write(T&&... args) {
 }
 
 void solve() {
-
+    int n, x;
+    read(n, x);
+    vector<int> c(n);
+    for(int i = 0; i < n; i++)
+        read(c[i]);
+    vector<int> dp(x + 1);
+    dp[0] = 1;
+    for(int i = 1; i <= x; i++) {
+        for(int j = 0; j < n; j++) {
+            if(i - c[j] >= 0) {
+                dp[i] = (dp[i] + dp[i - c[j]]) % mod;
+            }
+        }
+    }
+    write(dp[x]);
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
+// #ifndef ONLINE_JUDGE
+//     freopen("input.txt", "r", stdin);
+//     freopen("output.txt", "w", stdout);
+// #endif
     solve();
     return 0;
 }

@@ -123,33 +123,6 @@ competitive_programming/fast:
 	$(MAKE) -f CMakeFiles/competitive_programming.dir/build.make CMakeFiles/competitive_programming.dir/build
 .PHONY : competitive_programming/fast
 
-Interviewbit/Graphs/CowsAndSnacks.o: Interviewbit/Graphs/CowsAndSnacks.cpp.o
-
-.PHONY : Interviewbit/Graphs/CowsAndSnacks.o
-
-# target to build an object file
-Interviewbit/Graphs/CowsAndSnacks.cpp.o:
-	$(MAKE) -f CMakeFiles/competitive_programming.dir/build.make CMakeFiles/competitive_programming.dir/Interviewbit/Graphs/CowsAndSnacks.cpp.o
-.PHONY : Interviewbit/Graphs/CowsAndSnacks.cpp.o
-
-Interviewbit/Graphs/CowsAndSnacks.i: Interviewbit/Graphs/CowsAndSnacks.cpp.i
-
-.PHONY : Interviewbit/Graphs/CowsAndSnacks.i
-
-# target to preprocess a source file
-Interviewbit/Graphs/CowsAndSnacks.cpp.i:
-	$(MAKE) -f CMakeFiles/competitive_programming.dir/build.make CMakeFiles/competitive_programming.dir/Interviewbit/Graphs/CowsAndSnacks.cpp.i
-.PHONY : Interviewbit/Graphs/CowsAndSnacks.cpp.i
-
-Interviewbit/Graphs/CowsAndSnacks.s: Interviewbit/Graphs/CowsAndSnacks.cpp.s
-
-.PHONY : Interviewbit/Graphs/CowsAndSnacks.s
-
-# target to generate assembly for a file
-Interviewbit/Graphs/CowsAndSnacks.cpp.s:
-	$(MAKE) -f CMakeFiles/competitive_programming.dir/build.make CMakeFiles/competitive_programming.dir/Interviewbit/Graphs/CowsAndSnacks.cpp.s
-.PHONY : Interviewbit/Graphs/CowsAndSnacks.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -186,9 +159,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... competitive_programming"
-	@echo "... Interviewbit/Graphs/CowsAndSnacks.o"
-	@echo "... Interviewbit/Graphs/CowsAndSnacks.i"
-	@echo "... Interviewbit/Graphs/CowsAndSnacks.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
