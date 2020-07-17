@@ -45,7 +45,7 @@ void write(T&&... args) {
 }
 
 void solve() {
-
+    
 }
 
 int32_t main() {
