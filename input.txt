@@ -1,13 +1,3 @@
-6
-8
-bbdcaaaa
-8
-asdfghjk
-8
-ceaaaabb
-8
-bbaaddcc
-1
-z
-2
-ac
+4 10
+4 8 5 3
+5 12 8 1
