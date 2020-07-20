@@ -1,8 +1,3 @@
-/****************************************************
-*   Template for coding contests                    *
-*   Author    :    Sanjeev Sharma                   *
-*   Email     :    thedevelopersanjeev@gmail.com    *
-*****************************************************/
 #pragma GCC optimize("O3")
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
@@ -14,8 +9,8 @@
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 
-using namespace __gnu_pbds;
 using namespace std;
+using namespace __gnu_pbds;
 
 #define deb(x) cout << #x << " is " << x << "\n"
 #define int long long
@@ -23,32 +18,34 @@ using namespace std;
 
 const double PI = 2 * acos(0.0);
 const long long INF = 1e18L + 5;
+
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-template <class... Args>
-auto create(size_t n, Args &&... args)
+template <typename T>
+inline istream &operator>>(istream &in, vector<T> &a)
 {
-    if constexpr (sizeof...(args) == 1)
-        return vector(n, args...);
-    else
-        return vector(n, create(args...));
+    for (auto &x : a)
+        in >> x;
+    return in;
 }
 
-template <typename... T>
-void read(T &... args)
+template <typename T>
+inline ostream &operator<<(ostream &out, vector<T> &a)
 {
-    ((cin >> args), ...);
-}
-
-template <typename... T>
-void write(T &&... args)
-{
-    ((cout << args), ...);
+    for (auto &x : a)
+        out << x << " ";
+    return out;
 }
 
 void solve()
 {
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    cin >> arr;
+    cout << arr;
+    cout << "\n";
 }
 
 int32_t main()
