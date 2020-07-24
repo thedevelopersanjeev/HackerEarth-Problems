@@ -40,12 +40,6 @@ inline ostream &operator<<(ostream &out, vector<T> &a)
 
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> arr(n);
-    cin >> arr;
-    cout << arr;
-    cout << "\n";
 }
 
 int32_t main()
