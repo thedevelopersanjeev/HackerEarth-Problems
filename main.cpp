@@ -3,6 +3,7 @@
 #pragma GCC optimize("unroll-loops")
 #pragma GCC optimize("no-stack-protector")
 #pragma GCC optimize("fast-math")
+#pragma GCC optimize("trapv")
 #pragma GCC target("sse4")
 
 #include <bits/stdc++.h>
@@ -21,22 +22,6 @@ const long long INF = 1e18L + 5;
 
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-
-template <typename T>
-inline istream &operator>>(istream &in, vector<T> &a)
-{
-    for (auto &x : a)
-        in >> x;
-    return in;
-}
-
-template <typename T>
-inline ostream &operator<<(ostream &out, vector<T> &a)
-{
-    for (auto &x : a)
-        out << x << " ";
-    return out;
-}
 
 void solve()
 {
