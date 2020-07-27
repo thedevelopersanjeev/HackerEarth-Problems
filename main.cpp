@@ -15,7 +15,7 @@ using namespace __gnu_pbds;
 
 #define deb(x) cout << #x << " is " << x << "\n"
 #define int long long
-#define mod 1000000007
+#define mod 1000000007LL
 #define PI 2 * acos(0)
 
 template <typename T>

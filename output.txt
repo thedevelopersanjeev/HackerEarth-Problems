@@ -1,3 +1,0 @@
-sizeof(x) is 4
-sizeof(y) is 8
-sizeof(z) is 8
