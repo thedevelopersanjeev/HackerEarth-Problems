@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/competitive_programming.dir/main.cpp.o  -o competitive_programming 
