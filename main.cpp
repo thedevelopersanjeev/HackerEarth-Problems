@@ -16,7 +16,7 @@ using namespace __gnu_pbds;
 #define deb(x) cout << #x << " is " << x << "\n"
 #define int long long
 #define mod 1000000007LL
-#define PI 2 * acos(0)
+#define PI acosl(-1)
 
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
