@@ -23,16 +23,31 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
 
 void solve()
 {
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    vector<int> dp;
+    for (const auto &ele : arr)
+    {
+        auto it = lower_bound(dp.begin(), dp.end(), ele);
+        if (it == dp.end())
+            dp.push_back(ele);
+        else
+            *it = ele;
+    }
+    cout << dp.size();
 }
 
 int32_t main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	// #ifndef ONLINE_JUDGE
-	// 	freopen("input.txt", "r", stdin);
-	// 	freopen("output.txt", "w", stdout);
-	// #endif
-	solve();
-	return 0;
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    // #ifndef ONLINE_JUDGE
+    // 	freopen("input.txt", "r", stdin);
+    // 	freopen("output.txt", "w", stdout);
+    // #endif
+    solve();
+    return 0;
 }
