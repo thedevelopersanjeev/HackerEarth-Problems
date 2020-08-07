@@ -15,18 +15,17 @@ using namespace __gnu_pbds;
 
 #define deb(x) cout << #x << " is " << x << "\n"
 #define int long long
-#define mod 1000000007LL
-#define PI acosl(-1)
+#define mod 1000000007
+#define PI acos(-1)
 
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-void solve()
-{
+void solve() {
+
 }
 
-int32_t main()
-{
+int32_t main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 #ifndef ONLINE_JUDGE
