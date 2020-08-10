@@ -7,22 +7,15 @@
 #pragma GCC target("sse4")
 
 #include <bits/stdc++.h>
-#include <ext/pb_ds/tree_policy.hpp>
-#include <ext/pb_ds/assoc_container.hpp>
-
 using namespace std;
-using namespace __gnu_pbds;
 
 #define deb(x) cout << #x << " is " << x << "\n"
 #define int long long
 #define mod 1000000007
 #define PI acos(-1)
 
-template <typename T>
-using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-
 void solve() {
-
+	
 }
 
 int32_t main() {
