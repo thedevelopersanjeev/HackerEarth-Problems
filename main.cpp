@@ -32,6 +32,10 @@ int32_t main() {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
-	solve();
+	int tc = 1;
+	cin >> tc;
+	while(tc--) {
+	    solve();
+	}
 	return 0;
 }
