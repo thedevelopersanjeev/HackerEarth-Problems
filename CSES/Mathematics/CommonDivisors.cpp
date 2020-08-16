@@ -15,7 +15,23 @@ using namespace std;
 #define PI acos(-1)
 
 void solve() {
-	
+	int n, ele;
+	cin >> n;
+	const int N = 1e6;
+	unordered_map<int, int> freq;
+	for(int i = 0; i < n; i++) { 
+		cin >> ele;
+		freq[ele]++;
+	}
+	for(int i = N; i >= 0; i--) {
+		int cnt = 0;
+		for(int j = i; j <= N; j += i)
+			cnt += freq[j];
+		if(cnt > 1) {
+			cout << i;
+			break;
+		}
+	}
 }
 
 int32_t main() {

@@ -15,7 +15,26 @@ using namespace std;
 #define PI acos(-1)
 
 void solve() {
-	
+	int n, ai, bi, pi;
+	cin >> n;
+	vector<vector<int>> arr(n, vector<int>(3));
+	for(int i = 0; i < n; i++) {
+		cin >> ai >> bi >> pi;
+		arr[i][1] = ai;
+		arr[i][0] = bi;
+		arr[i][2] = pi;
+	}
+	sort(arr.begin(), arr.end());
+	set<pair<int, int>> dp;
+	dp.insert({0, 0});
+	int ans = 0;
+	for(int i = 0; i < n; i++) {
+		auto it = dp.lower_bound({arr[i][1], 0});
+		--it;
+		ans = max(ans, (*it).second + arr[i][2]);
+		dp.insert({arr[i][0], ans});
+	}
+	cout << ans;
 }
 
 int32_t main() {
