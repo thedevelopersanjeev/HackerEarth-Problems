@@ -15,18 +15,32 @@ using namespace std;
 #define PI acos(-1)
 
 void solve() {
-	
+	string s, t;
+	cin >> s >> t;
+	int ans = INT_MAX;
+	int n = s.size(), m = t.size();
+	for(int i = 0; i < n - m + 1; i++) {
+		string curr = s.substr(i, m);
+		int cnt = 0;
+		for(int j = 0; j < m; j++) {
+			// deb(curr[j]);
+			// deb(t[j]);
+			if(curr[j] != t[j]) {
+				cnt++;
+			}
+			
+			// deb(cnt);
+		}
+		ans = min(ans, cnt);
+	}
+	cout << ans;
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     while(tc--) {
         solve();
     }
