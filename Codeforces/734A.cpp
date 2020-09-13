@@ -16,18 +16,35 @@ using namespace std;
 #define PI acos(-1)
 
 void solve() {
-	
+    int n;
+    string s;
+    cin >> n >> s;
+    int a = 0, d = 0;
+    for (int i = 0; i < n; i++) {
+        if (s[i] == 'A') {
+            a++;
+        } else {
+            d++;
+        }
+    }
+    if (a > d) {
+        cout << "Anton";
+    } else if (a < d) {
+        cout << "Danik";
+    } else {
+        cout << "Friendship";
+    }
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
+//#ifndef ONLINE_JUDGE
+//    freopen("input.txt", "r", stdin);
+//    freopen("output.txt", "w", stdout);
+//#endif
     int tc = 1;
-    cin >> tc;
+//    cin >> tc;
     while (tc--) {
         solve();
     }

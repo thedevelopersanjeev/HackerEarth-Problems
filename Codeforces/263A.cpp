@@ -16,18 +16,28 @@ using namespace std;
 #define PI acos(-1)
 
 void solve() {
-	
+    int x, y, ele;
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            cin >> ele;
+            if (ele == 1) {
+                x = i;
+                y = j;
+            }
+        }
+    }
+    cout << abs(2 - x) + abs(2 - y);
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
+//#ifndef ONLINE_JUDGE
+//    freopen("input.txt", "r", stdin);
+//    freopen("output.txt", "w", stdout);
+//#endif
     int tc = 1;
-    cin >> tc;
+//    cin >> tc;
     while (tc--) {
         solve();
     }
