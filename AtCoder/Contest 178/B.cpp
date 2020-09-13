@@ -16,18 +16,20 @@ using namespace std;
 #define PI acos(-1)
 
 void solve() {
-
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    cout << max({a * c, a * d, b * c, b * d});
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
+//#ifndef ONLINE_JUDGE
+//    freopen("input.txt", "r", stdin);
+//    freopen("output.txt", "w", stdout);
+//#endif
     int tc = 1;
-    cin >> tc;
+//    cin >> tc;
     while (tc--) {
         solve();
     }

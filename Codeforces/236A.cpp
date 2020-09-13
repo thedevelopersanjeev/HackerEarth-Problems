@@ -16,7 +16,12 @@ using namespace std;
 #define PI acos(-1)
 
 void solve() {
-
+    string s;
+    cin >> s;
+    unordered_set<char> st;
+    for (const auto &ch : s)
+        st.insert(ch);
+    cout << (st.size() % 2 == 0 ? "CHAT WITH HER!" : "IGNORE HIM!");
 }
 
 int32_t main() {
@@ -27,7 +32,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     int tc = 1;
-    cin >> tc;
+//    cin >> tc;
     while (tc--) {
         solve();
     }
