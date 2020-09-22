@@ -16,19 +16,14 @@ using namespace std;
 #define PI acos(-1)
 
 void solve() {
-    int n, m, z;
-    cin >> n >> m >> z;
-    vector<int> a;
-    for(int i = n; i <= z; i += n) {
-        a.push_back(i);
-    }
-    int ans = 0;
-    for(int i = m; i <= z; i += m) {
-        if(binary_search(a.begin(), a.end(), i)) {
-            ans++;
-        }
-    }
-    cout << ans;
+    int a, b, c;
+    cin >> a >> b >> c;
+    vector<int> arr = {a, b, c};
+    sort(arr.begin(), arr.end());
+    a = arr[0];
+    b = arr[1];
+    c = arr[2];
+    cout << max(0LL, c - a - b + 1);
 }
 
 int32_t main() {
