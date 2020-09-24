@@ -16,7 +16,10 @@ using namespace std;
 #define PI acos(-1)
 
 void solve() {
-
+    int n, m;
+    // 10 2
+    cin >> n >> m;
+    cout << n + ((n - 1) / (m - 1));
 }
 
 int32_t main() {
