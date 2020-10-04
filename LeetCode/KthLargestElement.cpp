@@ -29,7 +29,7 @@ class KthLargest {
         return pq.top();
     }
 };
-
+// the time and space complexity of this code is O(n*log(K)) and O(K).
 /**
  * Your KthLargest object will be instantiated and called as such:
  * KthLargest* obj = new KthLargest(k, nums);
