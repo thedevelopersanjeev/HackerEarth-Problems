@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/usr/local/Cellar/flac/1.3.3/include/FLAC"
             ],
             "defines": [
                 "_DEBUG",
@@ -11,10 +12,10 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.17763.0",
-            "compilerPath": "C:/MinGW/bin/g++.exe",
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "gcc-x86"
+            "compilerPath": "/usr/local/bin/g++-9",
+            "cStandard": "c18",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4
