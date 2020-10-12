@@ -18,26 +18,21 @@ using namespace std;
 // C(n, r) = n! / (r! * (n - r)!)
 // C(n, r) = C(n, n - r)
 // C(n, r) = C(n - 1, r - 1) + C(n - 1, r)
-int nCr(int n, int r)
-{
+int nCr(int n, int r) {
     long double res = 1;
     r = min(r, n - r);
-    for (int i = 1; i <= r; i++)
-    {
+    for (int i = 1; i <= r; i++) {
         res = res * (n - r + i) / i;
     }
     return (int)(res + 0.01);
 }
 
 // (x ^ y) % mod
-int modpow(int x, int y, int m)
-{
+int modpow(int x, int y, int m) {
     x %= m;
     int res = 1LL;
-    while (y > 0)
-    {
-        if (y & 1)
-        {
+    while (y > 0) {
+        if (y & 1) {
             res = (res * x) % m;
         }
         x = (x * x) % m;
@@ -46,31 +41,23 @@ int modpow(int x, int y, int m)
     return res;
 }
 
-void solve()
-{
+void solve() {
     int n;
     cin >> n;
-    if (n < 3 || n == 4)
-    {
+    if (n < 3 || n == 4) {
         cout << "-1\n";
         return;
     }
-    if (n % 3 == 0)
-    {
+    if (n % 3 == 0) {
         cout << n / 3 << " 0 0\n";
-    }
-    else if ((n - 5) % 3 == 0)
-    {
+    } else if ((n - 5) % 3 == 0) {
         cout << (n - 5) / 3 << " 1 0\n";
-    }
-    else
-    {
+    } else {
         cout << (n - 7) / 3 << " 0 1\n";
     }
 }
 
-int32_t main()
-{
+int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 #ifndef ONLINE_JUDGE
@@ -79,8 +66,7 @@ int32_t main()
 #endif
     int tc = 1;
     cin >> tc;
-    while (tc--)
-    {
+    while (tc--) {
         solve();
     }
     return 0;
