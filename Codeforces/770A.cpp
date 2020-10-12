@@ -47,7 +47,17 @@ int modpow (int x, int y, int m) {
 }
 
 void solve() {
+	int n, k;
+	cin >> n >> k;
 
+	for (int i = 1; i <= n; i++) {
+		if (i <= k) {
+			cout << (char) ('a' + i - 1);
+
+		} else {
+			cout << (i % 2 == 0 ? 'b' : 'a');
+		}
+	}
 }
 
 int32_t main() {

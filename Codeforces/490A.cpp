@@ -47,7 +47,26 @@ int modpow (int x, int y, int m) {
 }
 
 void solve() {
+	int n, ele;
+	cin >> n;
+	vector<vector<int>> idx(3, vector<int>(0));
 
+	for (int i = 0; i < n; i++) {
+		cin >> ele;
+		ele--;
+		idx[ele].push_back(i + 1);
+	}
+
+	int cnt = min({idx[0].size(), idx[1].size(), idx[2].size()});
+
+	cout << cnt << "\n";
+
+	while (cnt--) {
+		cout << idx[0].back() << " " << idx[1].back() << " " << idx[2].back() << "\n";
+		idx[0].pop_back();
+		idx[1].pop_back();
+		idx[2].pop_back();
+	}
 }
 
 int32_t main() {

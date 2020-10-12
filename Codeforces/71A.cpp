@@ -22,9 +22,8 @@ int nCr (int n, int r) {
 	long double res = 1;
 	r = min (r, n - r);
 
-	for (int i = 1; i <= r; i++) {
+	for (int i = 1; i <= r; i++)
 		res = res * (n - r + i) / i;
-	}
 
 	return (int) (res + 0.01);
 }
@@ -35,9 +34,8 @@ int modpow (int x, int y, int m) {
 	int res = 1LL;
 
 	while (y > 0) {
-		if (y & 1) {
+		if (y & 1)
 			res = (res * x) % m;
-		}
 
 		x = (x * x) % m;
 		y >>= 1;
@@ -47,22 +45,28 @@ int modpow (int x, int y, int m) {
 }
 
 void solve() {
+	string s;
+	cin >> s;
+	int n = s.size();
 
+	if (n > 10)
+		cout << s[0] << n - 2 << s[n - 1] << "\n"; else
+
+		cout << s << "\n";
 }
 
 int32_t main() {
 	ios_base::sync_with_stdio (false);
 	cin.tie (nullptr);
-#ifndef ONLINE_JUDGE
+	#ifndef ONLINE_JUDGE
 	freopen ("input.txt", "r", stdin);
 	freopen ("output.txt", "w", stdout);
-#endif
+	#endif
 	int tc = 1;
-	// cin >> tc;
+	cin >> tc;
 
-	while (tc--) {
+	while (tc--)
 		solve();
-	}
 
 	return 0;
 }

@@ -47,16 +47,45 @@ int modpow (int x, int y, int m) {
 }
 
 void solve() {
+	string s;
+	cin >> s;
+	int n = s.size(), x = 0, y = 0, z = 0;
 
+	for (int i = 0; i < n; i += 2) {
+		if (s[i] == '1') {
+			x++;
+
+		} else if (s[i] == '2') {
+			y++;
+
+		} else {
+			z++;
+		}
+	}
+
+	for (int i = 0; i < n; i++) {
+		if (i % 2 == 1) {
+			cout << "+";
+		} else if (x > 0) {
+			cout << "1";
+			x--;
+		} else if (y > 0) {
+			cout << "2";
+			y--;
+		} else if (z > 0) {
+			cout << "3";
+			z--;
+		}
+	}
 }
 
 int32_t main() {
 	ios_base::sync_with_stdio (false);
 	cin.tie (nullptr);
-#ifndef ONLINE_JUDGE
+	#ifndef ONLINE_JUDGE
 	freopen ("input.txt", "r", stdin);
 	freopen ("output.txt", "w", stdout);
-#endif
+	#endif
 	int tc = 1;
 	// cin >> tc;
 
