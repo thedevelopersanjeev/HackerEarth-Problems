@@ -41,9 +41,6 @@ int modpow(int x, int y, int m) {
 }
 
 void solve() {
-    int n;
-    cin >> n;
-    deb(n);
 }
 
 int32_t main() {
