@@ -17,6 +17,19 @@ template <typename T>
 using max_heap = priority_queue<T>;
 
 void solve(int tc) {
+    string s;
+    cin >> s;
+    int curr = 0, ans = 0;
+    for (const auto &ch : s) {
+        if (ch == 'A' || ch == 'T' || ch == 'G' || ch == 'C') {
+            curr++;
+        } else {
+            ans = max(ans, curr);
+            curr = 0;
+        }
+    }
+    ans = max(ans, curr);
+    cout << ans;
 }
 
 int32_t main() {

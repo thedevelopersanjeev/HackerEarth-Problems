@@ -17,6 +17,22 @@ template <typename T>
 using max_heap = priority_queue<T>;
 
 void solve(int tc) {
+    int n, q, l, r;
+    string s;
+    cin >> n >> q >> s;
+    int a[n + 1] = {0};
+    for (int i = 1; i < n; i++) {
+        if (s[i - 1] == 'A' && s[i] == 'C') {
+            a[i + 1] = a[i] + 1;
+        } else {
+            a[i + 1] = a[i];
+        }
+    }
+    while (q--) {
+        int l, r;
+        cin >> l >> r;
+        cout << a[r] - a[l] << "\n";
+    }
 }
 
 int32_t main() {
