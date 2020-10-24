@@ -46,15 +46,17 @@ int modpow(int x, int y, int m) {
 }
 
 void solve() {
+    int n;
+    cin >> n;
+    int ans = modpow(10, n, mod) - modpow(9, n, mod) - modpow(9, n, mod) + modpow(8, n, mod);
+    ans %= mod;
+    ans = (ans + mod) % mod;
+    cout << ans;
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    // #ifndef ONLINE_JUDGE
-    //     freopen("input.txt", "r", stdin);
-    //     freopen("output.txt", "w", stdout);
-    // #endif
     int tc = 1;
 
     // cin >> tc;
