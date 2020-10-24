@@ -20,9 +20,11 @@ using namespace std;
 int nCr(int n, int r) {
     long double res = 1;
     r = min(r, n - r);
+
     for (int i = 1; i <= r; i++) {
         res = res * (n - r + i) / i;
     }
+
     return (int)(res + 0.01);
 }
 
@@ -30,13 +32,16 @@ int nCr(int n, int r) {
 int modpow(int x, int y, int m) {
     x %= m;
     int res = 1LL;
+
     while (y > 0) {
         if (y & 1) {
             res = (res * x) % m;
         }
+
         x = (x * x) % m;
         y >>= 1;
     }
+
     return res;
 }
 
@@ -51,9 +56,12 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     int tc = 1;
+
     cin >> tc;
+
     while (tc--) {
         solve();
     }
+
     return 0;
 }
