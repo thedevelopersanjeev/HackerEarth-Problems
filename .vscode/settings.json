@@ -9,6 +9,8 @@
         "vector": "cpp",
         "iostream": "cpp",
         "cmath": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "atomic": "cpp",
+        "cstdint": "cpp"
     }
 }
