@@ -16,6 +16,16 @@ using min_heap = priority_queue<T, vector<T>, greater<T>>;
 template <typename T>
 using max_heap = priority_queue<T>;
 
+template <typename... T>
+void read(T&... args) {
+    ((cin >> args), ...);
+}
+
+template <typename... T>
+void write(T&&... args) {
+    ((cout << args), ...);
+}
+
 void solve(int tc) {
 }
 
@@ -27,7 +37,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     int tc = 1;
-    cin >> tc;
+    read(tc);
     for (int curr = 1; curr <= tc; curr++) solve(curr);
     return 0;
 }
