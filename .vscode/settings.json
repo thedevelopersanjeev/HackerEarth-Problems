@@ -11,6 +11,7 @@
         "cmath": "cpp",
         "complex": "cpp",
         "atomic": "cpp",
-        "cstdint": "cpp"
+        "cstdint": "cpp",
+        "ostream": "cpp"
     }
 }
