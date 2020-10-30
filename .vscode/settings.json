@@ -12,6 +12,12 @@
         "complex": "cpp",
         "atomic": "cpp",
         "cstdint": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "array": "cpp",
+        "forward_list": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp"
     }
 }

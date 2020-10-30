@@ -27,18 +27,31 @@ void write(T &&... args) {
 }
 
 void solve(int tc) {
-    int n, m;
-    read(n, m);
-    vector<int> c(n);
-    for (int i = 0; i < n; i++) read(c[i]);
-    sort(c.begin(), c.end());
-    int ans = 0;
-    for (int i = 0; i < m; i++) {
-        if (c[i] <= 0) {
-            ans += abs(c[i]);
+    int k;
+    string s;
+    read(k, s);
+    int n = s.size();
+    if (n % k != 0) {
+        write(-1);
+        return;
+    }
+    unordered_map<char, int> mp;
+    for (const auto &ele : s) mp[ele]++;
+    for (const auto &ele : mp) {
+        if (ele.second % k != 0) {
+            write(-1);
+            return;
         }
     }
-    write(ans);
+    string ans = "";
+    for (const auto &ele : mp) {
+        int cnt = ele.second / k;
+        string curr(cnt, ele.first);
+        ans += curr;
+    }
+    while (k--) {
+        write(ans);
+    }
 }
 
 int32_t main() {

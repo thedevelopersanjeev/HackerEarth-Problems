@@ -27,16 +27,13 @@ void write(T &&... args) {
 }
 
 void solve(int tc) {
-    int n, m;
-    read(n, m);
-    vector<int> c(n);
-    for (int i = 0; i < n; i++) read(c[i]);
-    sort(c.begin(), c.end());
+    int N, A, B;
+    read(N, A, B);
     int ans = 0;
-    for (int i = 0; i < m; i++) {
-        if (c[i] <= 0) {
-            ans += abs(c[i]);
-        }
+    for (int i = 1; i <= N; i++) {
+        int front = N - i;
+        int back = i - 1;
+        if (front >= A && back <= B) ans++;
     }
     write(ans);
 }

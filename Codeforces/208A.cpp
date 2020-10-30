@@ -27,15 +27,18 @@ void write(T &&... args) {
 }
 
 void solve(int tc) {
-    int n, m;
-    read(n, m);
-    vector<int> c(n);
-    for (int i = 0; i < n; i++) read(c[i]);
-    sort(c.begin(), c.end());
-    int ans = 0;
-    for (int i = 0; i < m; i++) {
-        if (c[i] <= 0) {
-            ans += abs(c[i]);
+    string s;
+    read(s);
+    int n = s.size();
+    string ans = "";
+    for (int i = 0; i < n; i++) {
+        if (i + 2 < n && s[i] == 'W' && s[i + 1] == 'U' && s[i + 2] == 'B') {
+            i += 2;
+            if (ans.size() > 0 && ans.back() != ' ') {
+                ans += " ";
+            }
+        } else {
+            ans += s[i];
         }
     }
     write(ans);

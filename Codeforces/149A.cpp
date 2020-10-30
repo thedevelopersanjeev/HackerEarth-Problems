@@ -27,18 +27,22 @@ void write(T &&... args) {
 }
 
 void solve(int tc) {
-    int n, m;
-    read(n, m);
-    vector<int> c(n);
-    for (int i = 0; i < n; i++) read(c[i]);
-    sort(c.begin(), c.end());
-    int ans = 0;
-    for (int i = 0; i < m; i++) {
-        if (c[i] <= 0) {
-            ans += abs(c[i]);
-        }
+    int k;
+    vector<int> val(12);
+    read(k);
+    for (auto &ele : val) read(ele);
+    sort(val.begin(), val.end());
+    int ans = 0, curr = 0, j = 11;
+    while (curr < k && j >= 0) {
+        curr += val[j];
+        ans++;
+        j--;
     }
-    write(ans);
+    if (curr >= k) {
+        write(ans);
+    } else {
+        write(-1);
+    }
 }
 
 int32_t main() {

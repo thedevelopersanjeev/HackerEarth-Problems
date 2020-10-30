@@ -27,18 +27,24 @@ void write(T &&... args) {
 }
 
 void solve(int tc) {
-    int n, m;
-    read(n, m);
-    vector<int> c(n);
-    for (int i = 0; i < n; i++) read(c[i]);
-    sort(c.begin(), c.end());
-    int ans = 0;
-    for (int i = 0; i < m; i++) {
-        if (c[i] <= 0) {
-            ans += abs(c[i]);
+    string s;
+    read(s);
+    int n = s.size();
+    bool flag = false;
+    int curr = 1;
+    for (int i = 1; i < n; i++) {
+        if (s[i] != s[i - 1]) {
+            if (curr >= 7) {
+                flag = true;
+                break;
+            }
+            curr = 1;
+        } else {
+            curr++;
         }
     }
-    write(ans);
+    flag = (curr >= 7);
+    write((flag ? "YES" : "NO"));
 }
 
 int32_t main() {
