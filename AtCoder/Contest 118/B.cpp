@@ -27,6 +27,22 @@ void write(T &&...args) {
 }
 
 void solve(int tc) {
+    int N, M;
+    read(N, M);
+    vector<int> cnt(M + 1, 0);
+    for (int i = 0; i < N; i++) {
+        int K, ele;
+        read(K);
+        while (K--) {
+            read(ele);
+            cnt[ele]++;
+        }
+    }
+    int ans = 0;
+    for (int i = 0; i <= M; i++) {
+        if (cnt[i] == N) ans++;
+    }
+    write(ans);
 }
 
 int32_t main() {

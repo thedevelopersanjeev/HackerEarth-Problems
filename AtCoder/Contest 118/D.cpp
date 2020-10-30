@@ -27,6 +27,30 @@ void write(T &&...args) {
 }
 
 void solve(int tc) {
+    int n, m;
+    read(n, m);
+
+    vector<int> a(m);
+    for (int i = 0; i < m; i++)
+        read(a[i]);
+
+    vector<int> mp({0, 2, 5, 5, 4, 5, 6, 3, 7, 6});
+    vector<string> dp(n + 1, "");
+    for (int i = n; i > 0; i--) {
+        if (i != n && dp[i].length() == 0)
+            continue;
+        for (auto j : a) {
+            if (i - mp[j] >= 0) {
+                string s1 = dp[i - mp[j]];
+                string s2 = dp[i] + char(j + '0');
+
+                if (s2.length() > s1.length() || (s2.length() == s1.length() && s2 > s1))
+                    dp[i - mp[j]] = s2;
+            }
+        }
+    }
+
+    write(dp[0]);
 }
 
 int32_t main() {

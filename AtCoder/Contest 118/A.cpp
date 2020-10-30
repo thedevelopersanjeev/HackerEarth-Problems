@@ -27,6 +27,13 @@ void write(T &&...args) {
 }
 
 void solve(int tc) {
+    int A, B;
+    read(A, B);
+    if (B % A == 0) {
+        write(B + A);
+    } else {
+        write(B - A);
+    }
 }
 
 int32_t main() {

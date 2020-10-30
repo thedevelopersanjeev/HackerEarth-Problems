@@ -27,6 +27,17 @@ void write(T &&...args) {
 }
 
 void solve(int tc) {
+    int N;
+    read(N);
+    vector<int> A(N);
+    for (auto &ele : A) {
+        read(ele);
+    }
+    int ans = A[0];
+    for (int i = 1; i < N; i++) {
+        ans = __gcd(ans, A[i]);
+    }
+    write(ans);
 }
 
 int32_t main() {
