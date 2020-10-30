@@ -37,7 +37,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     int tc = 1;
-    // read(tc);
+    read(tc);
     for (int curr = 1; curr <= tc; curr++) solve(curr);
     return 0;
 }
