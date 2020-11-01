@@ -17,27 +17,30 @@ template <typename T>
 using max_heap = priority_queue<T>;
 
 template <typename... T>
-void read(T &... args) {
+void read(T &...args) {
     ((cin >> args), ...);
 }
 
 template <typename... T>
-void write(T &&... args) {
+void write(T &&...args) {
     ((cout << args), ...);
 }
 
 void solve(int tc) {
+    int a, b, c;
+    read(a, b, c);
+    write((a * b) / 2);
 }
 
 int32_t main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
+    // #ifndef ONLINE_JUDGE
+    //     freopen("input.txt", "r", stdin);
+    //     freopen("output.txt", "w", stdout);
+    // #endif
     int tc = 1;
-    read(tc);
+    // read(tc);
     for (int curr = 1; curr <= tc; curr++) solve(curr);
     return 0;
 }
