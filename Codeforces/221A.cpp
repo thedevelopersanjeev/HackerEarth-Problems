@@ -27,6 +27,12 @@ void write(T &&...args) {
 }
 
 void solve(int tc) {
+    int n;
+    read(n);
+    write(n, " ");
+    for (int i = 1; i <= n - 1; i++) {
+        write(i, " ");
+    }
 }
 
 int32_t main() {
@@ -37,7 +43,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     int tc = 1;
-    read(tc);
+    // read(tc);
     for (int curr = 1; curr <= tc; curr++) solve(curr);
     return 0;
 }
