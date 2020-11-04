@@ -7,7 +7,7 @@ using namespace std;
 
 #define deb(x) cout << #x << " is " << x << "\n"
 #define int long long
-#define mod 1000000009
+#define mod 1000000007
 #define PI acos(-1)
 
 template <typename T>
@@ -26,7 +26,25 @@ void write(T &&...args) {
     ((cout << args), ...);
 }
 
+int modpow(int x, int y) {
+    x %= mod;
+    int ans = 1;
+    while (y > 0) {
+        if (y & 1) {
+            ans = (ans * x) % mod;
+        }
+        x = (x * x) % mod;
+        y >>= 1;
+    }
+    return ans;
+}
+
 void solve(int tc) {
+    int N;
+    read(N);
+    int ans = modpow(2, N - 1);
+    ans = modpow(ans, mod - 2);
+    write(ans, "\n");
 }
 
 int32_t main() {

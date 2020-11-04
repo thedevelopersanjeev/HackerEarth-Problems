@@ -26,7 +26,29 @@ void write(T &&...args) {
     ((cout << args), ...);
 }
 
+int modpow(int x, int y) {
+    x %= mod;
+    int ans = 1;
+    while (y > 0) {
+        if (y & 1) {
+            ans = (ans * x) % mod;
+        }
+        x = (x * x) % mod;
+        y >>= 1;
+    }
+    return ans;
+}
+
 void solve(int tc) {
+    int n;
+    read(n);
+    int res = 1, temp = 1;
+    for (int i = 2; i <= n; i++) {
+        res = (res * (n + i)) % mod;
+        temp = (temp * i) % mod;
+    }
+    res = (res * modpow(temp, mod - 2)) % mod;
+    write(res, "\n");
 }
 
 int32_t main() {
@@ -37,7 +59,7 @@ int32_t main() {
     freopen("output.txt", "w", stdout);
 #endif
     int tc = 1;
-    read(tc);
+    // read(tc);
     for (int curr = 1; curr <= tc; curr++) solve(curr);
     return 0;
 }
