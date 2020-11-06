@@ -7,7 +7,7 @@ using namespace std;
 
 #define deb(x) cout << #x << " is " << x << "\n"
 #define int long long
-#define mod 1000000009
+#define mod 1000000007
 #define PI acos(-1)
 
 template <typename T>
@@ -17,13 +17,24 @@ template <typename T>
 using max_heap = priority_queue<T>;
 
 template <typename... T>
-void read(T &...args) {
+void read(T &... args) {
     ((cin >> args), ...);
 }
 
 template <typename... T>
-void write(T &&...args) {
+void write(T &&... args) {
     ((cout << args), ...);
+}
+
+template <typename T>
+void readContainer(T &t) {
+    for (auto &e : t) read(e);
+}
+
+template <typename T>
+void writeContainer(T &t) {
+    for (const auto &e : t) write(e, " ");
+    write("\n");
 }
 
 void solve(int tc) {
