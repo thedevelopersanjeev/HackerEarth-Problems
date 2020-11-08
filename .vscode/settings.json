@@ -19,6 +19,7 @@
         "initializer_list": "cpp",
         "regex": "cpp",
         "valarray": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "bitset": "cpp"
     }
 }
