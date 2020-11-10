@@ -17,12 +17,12 @@ template <typename T>
 using max_heap = priority_queue<T>;
 
 template <typename... T>
-void read(T &... args) {
+void read(T &...args) {
     ((cin >> args), ...);
 }
 
 template <typename... T>
-void write(T &&... args) {
+void write(T &&...args) {
     ((cout << args), ...);
 }
 
@@ -37,7 +37,38 @@ void writeContainer(T &t) {
     write("\n");
 }
 
+bitset<1000010> isPrime;
+vector<int> primeNumbers;
+
+void sieve(int _sieve_size) {
+    isPrime.set();
+    isPrime[0] = isPrime[1] = 0;
+    for (int i = 2; i <= _sieve_size; i++) {
+        if (isPrime[i]) {
+            for (int j = i * i; j <= _sieve_size; j += i) {
+                isPrime[j] = 0;
+            }
+            primeNumbers.push_back(i);
+        }
+    }
+}
+
 void solve(int tc) {
+    int n;
+    read(n);
+    pair<int, int> ans;
+    int mn = LLONG_MAX;
+    for (const auto &ele : primeNumbers) {
+        if (binary_search(primeNumbers.begin(), primeNumbers.end(), n - ele)) {
+            int curr = abs(ele - n + ele);
+            if (curr < mn) {
+                mn = curr;
+                ans.first = ele;
+                ans.second = n - ele;
+            }
+        }
+    }
+    write(ans.first, " ", ans.second);
 }
 
 int32_t main() {
@@ -47,8 +78,9 @@ int32_t main() {
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
+    sieve(1000000);
     int tc = 1;
-    read(tc);
+    // read(tc);
     for (int curr = 1; curr <= tc; curr++) solve(curr);
     return 0;
 }

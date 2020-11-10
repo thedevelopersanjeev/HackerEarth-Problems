@@ -17,27 +17,23 @@ template <typename T>
 using max_heap = priority_queue<T>;
 
 template <typename... T>
-void read(T &... args) {
+void read(T &...args) {
     ((cin >> args), ...);
 }
 
 template <typename... T>
-void write(T &&... args) {
+void write(T &&...args) {
     ((cout << args), ...);
 }
 
-template <typename T>
-void readContainer(T &t) {
-    for (auto &e : t) read(e);
-}
-
-template <typename T>
-void writeContainer(T &t) {
-    for (const auto &e : t) write(e, " ");
-    write("\n");
-}
-
 void solve(int tc) {
+    int n;
+    read(n);
+    int ans = 0;
+    for (int i = 5; n / i > 0; i *= 5) {
+        ans += n / i;
+    }
+    write(ans, "\n");
 }
 
 int32_t main() {
