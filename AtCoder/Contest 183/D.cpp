@@ -37,29 +37,30 @@ void writeContainer(T &t) {
     write("\n");
 }
 
+const int M = 2e5 + 5;
+vector<int> ARR(M, 0);
+
 void solve(int tc) {
-    int N, K;
-    read(N, K);
-    vector<vector<int>> T(N, vector<int>(N));
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            read(T[i][j]);
+    int N, W, Si, Ti, Pi;
+    read(N, W);
+    while (N--) {
+        read(Si, Ti, Pi);
+        ARR[Si] += Pi;
+        ARR[Ti] -= Pi;
+    }
+    for (int i = 1; i < M; i++) ARR[i] += ARR[i - 1];
+    bool flag = true;
+    for (const auto &ele : ARR) {
+        if (ele > W) {
+            flag = false;
+            break;
         }
     }
-    vector<int> ans(N);
-    int cnt = 0;
-    for (int i = 0; i < N; i++) ans[i] = i;
-    do {
-        if (ans[0] == 0) {
-            int curr = 0;
-            for (int i = 1; i < N; i++) {
-                curr += T[ans[i - 1]][ans[i]];
-            }
-            curr += T[ans.back()][0];
-            if (curr == K) cnt++;
-        }
-    } while (next_permutation(ans.begin(), ans.end()));
-    write(cnt);
+    if (flag) {
+        write("Yes\n");
+    } else {
+        write("No\n");
+    }
 }
 
 int32_t main() {
