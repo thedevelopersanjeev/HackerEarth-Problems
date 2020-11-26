@@ -38,16 +38,12 @@ void writeContainer(T &t) {
 }
 
 void solve(int tc) {
-    int a, b, c, d;
-    read(a, b, c, d);
-    if (a == c && b == d) {
-        write(0);
-    } else if (((a + b) == (c + d)) || ((a - b) == (c - d)) || abs(a - c) + abs(b - d) <= 3) {
-        write(1);
-    } else if ((abs(a - c) + abs(b - d)) <= 6 || (abs((a + b) - (c + d)) <= 3) || (abs((a - b) - (c - d)) <= 3) || (a + b) % 2 == (c + d) % 2) {
-        write(2);
+    int n;
+    read(n);
+    if (n == 7 || n == 5 || n == 3) {
+        write("YES");
     } else {
-        write(3);
+        write("NO");
     }
 }
 

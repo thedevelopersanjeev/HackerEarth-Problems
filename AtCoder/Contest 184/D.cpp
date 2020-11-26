@@ -37,18 +37,31 @@ void writeContainer(T &t) {
     write("\n");
 }
 
-void solve(int tc) {
-    int a, b, c, d;
-    read(a, b, c, d);
-    if (a == c && b == d) {
-        write(0);
-    } else if (((a + b) == (c + d)) || ((a - b) == (c - d)) || abs(a - c) + abs(b - d) <= 3) {
-        write(1);
-    } else if ((abs(a - c) + abs(b - d)) <= 6 || (abs((a + b) - (c + d)) <= 3) || (abs((a - b) - (c - d)) <= 3) || (a + b) % 2 == (c + d) % 2) {
-        write(2);
-    } else {
-        write(3);
+const int n = 1e2 + 1;
+long double dp[n][n][n];
+bool visited[n][n][n];
+
+long double solveUtil(int a, int b, int c) {
+    if (a == 100 || b == 100 || c == 100) {
+        return 0;
     }
+    if (visited[a][b][c] == true) {
+        return dp[a][b][c];
+    }
+    visited[a][b][c] = true;
+    int s = a + b + c;
+    long double x = (a * 1.0) / s;
+    long double y = (b * 1.0) / s;
+    long double z = (c * 1.0) / s;
+    long double ans = (x * solveUtil(a + 1, b, c)) + (y * solveUtil(a, b + 1, c)) + (z * solveUtil(a, b, c + 1));
+    return dp[a][b][c] = 1.0 + ans;
+}
+
+void solve(int tc) {
+    int a, b, c;
+    memset(visited, false, sizeof(visited));
+    read(a, b, c);
+    cout << fixed << setprecision(16) << solveUtil(a, b, c);
 }
 
 signed main() {

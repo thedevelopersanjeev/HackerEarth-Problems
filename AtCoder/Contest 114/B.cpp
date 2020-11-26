@@ -38,17 +38,15 @@ void writeContainer(T &t) {
 }
 
 void solve(int tc) {
-    int a, b, c, d;
-    read(a, b, c, d);
-    if (a == c && b == d) {
-        write(0);
-    } else if (((a + b) == (c + d)) || ((a - b) == (c - d)) || abs(a - c) + abs(b - d) <= 3) {
-        write(1);
-    } else if ((abs(a - c) + abs(b - d)) <= 6 || (abs((a + b) - (c + d)) <= 3) || (abs((a - b) - (c - d)) <= 3) || (a + b) % 2 == (c + d) % 2) {
-        write(2);
-    } else {
-        write(3);
+    string s;
+    read(s);
+    int ans = INT_MAX;
+    int n = s.size();
+    for (int i = 0; i < n - 2; i++) {
+        int curr = stoi(s.substr(i, 3));
+        ans = min(ans, abs(curr - 753));
     }
+    write(ans);
 }
 
 signed main() {

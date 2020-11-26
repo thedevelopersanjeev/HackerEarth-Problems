@@ -37,18 +37,42 @@ void writeContainer(T &t) {
     write("\n");
 }
 
-void solve(int tc) {
-    int a, b, c, d;
-    read(a, b, c, d);
-    if (a == c && b == d) {
-        write(0);
-    } else if (((a + b) == (c + d)) || ((a - b) == (c - d)) || abs(a - c) + abs(b - d) <= 3) {
-        write(1);
-    } else if ((abs(a - c) + abs(b - d)) <= 6 || (abs((a + b) - (c + d)) <= 3) || (abs((a - b) - (c - d)) <= 3) || (a + b) % 2 == (c + d) % 2) {
-        write(2);
-    } else {
-        write(3);
+int ans = 0;
+
+bool check(int n) {
+    bool x = false, y = false, z = false;
+    while (n > 0) {
+        int curr = n % 10;
+        if (curr == 3) {
+            x = true;
+        } else if (curr == 5) {
+            y = true;
+        } else if (curr == 7) {
+            z = true;
+        } else {
+            return false;
+        }
+        n /= 10;
     }
+    return x && y && z;
+}
+
+void dfs(int n, int x) {
+    if (check(n)) {
+        if (n <= x) ans++;
+    }
+    if (n <= 1e9) {
+        dfs(10 * n + 3, x);
+        dfs(10 * n + 5, x);
+        dfs(10 * n + 7, x);
+    }
+}
+
+void solve(int tc) {
+    int n;
+    read(n);
+    dfs(0, n);
+    write(ans);
 }
 
 signed main() {
