@@ -37,33 +37,35 @@ void writeContainer(T &t) {
     write("\n");
 }
 
-void solve(int tc) {
-    int N;
-    read(N);
-    vector<int> H(N), A(N);
-    readContainer(H);
-    readContainer(A);
-    // subsequence with increasing Hi and maximum sum of Ai => print(sum(Ai))
-    // 3 1 4 2
-    // 10 20 30 40
-    int base = 1;
-    while (base <= N) base *= 2;
-    vector<int> dp(N + 1), tree(2 * base);
-    for (int i = 0; i < N; i++) {
-        int curr = H[i] + base;
-        int best = 0;
-        while (curr > 0) {
-            if (curr % 2 == 1) {
-                best = max(best, tree[curr - 1]);
-            }
-            curr /= 2;
+void dfs(vector<int> adj[], vector<bool> &visited, vector<int> &ans, int u) {
+    visited[u] = true;
+    ans[u] = 0;
+    for (const auto &v : adj[u]) {
+        if (!visited[v]) {
+            dfs(adj, visited, ans, v);
         }
-        dp[H[i]] = best + A[i];
-        for (int j = base + H[i]; j >= 1; j /= 2) {
-            tree[j] = max(tree[j], dp[H[i]]);
+        ans[u] = max(ans[u], 1 + ans[v]);
+    }
+}
+
+void solve(int tc) {
+    int n, m, x, y;
+    read(n, m);
+    vector<int> adj[n];
+    while (m--) {
+        read(x, y);
+        x--;
+        y--;
+        adj[x].push_back(y);
+    }
+    vector<bool> visited(n, false);
+    vector<int> ans(n, 0);
+    for (int i = 0; i < n; i++) {
+        if (!visited[i]) {
+            dfs(adj, visited, ans, i);
         }
     }
-    write(*max_element(dp.begin(), dp.end()));
+    write(*max_element(ans.begin(), ans.end()));
 }
 
 signed main() {
