@@ -20,6 +20,7 @@
         "regex": "cpp",
         "valarray": "cpp",
         "numeric": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "rope": "cpp"
     }
 }
