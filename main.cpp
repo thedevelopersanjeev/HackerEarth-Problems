@@ -1,13 +1,4 @@
-#pragma GCC optimize("O3")
-#pragma GCC optimize("Ofast")
-#pragma GCC optimize("unroll-loops")
-#pragma GCC optimize("no-stack-protector")
-#pragma GCC optimize("fast-math")
-#pragma GCC optimize("trapv")
-#pragma GCC target("sse4")
-
 #include <bits/stdc++.h>
-
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 
@@ -17,7 +8,6 @@ using namespace __gnu_pbds;
 #define deb(x) cout << #x << " is " << x << "\n"
 #define int long long
 #define MOD 1000000007LL
-#define mod(x) (x % MOD + MOD) % MOD
 #define PI acos(-1)
 
 template <typename T>
@@ -47,7 +37,6 @@ void readContainer(T &t) {
 template <typename T>
 void writeContainer(T &t) {
 	for (const auto &e : t) write(e, " ");
-
 	write("\n");
 }
 
@@ -57,14 +46,8 @@ void solve(int tc) {
 signed main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
 	int tc = 1;
 	read(tc);
-
 	for (int curr = 1; curr <= tc; curr++) solve(curr);
-
 	return 0;
 }
