@@ -40,12 +40,17 @@ void writeContainer(T &t) {
 	write("\n");
 }
 
+auto speedup = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return nullptr;
+}();
+
 void solve(int tc) {
 }
 
 signed main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
 	int tc = 1;
 	read(tc);
 	for (int curr = 1; curr <= tc; curr++) solve(curr);
