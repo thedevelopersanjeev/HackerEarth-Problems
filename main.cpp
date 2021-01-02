@@ -48,7 +48,6 @@ auto speedup = []() {
 }();
 
 void solve(int tc) {
-	
 }
 
 signed main() {
