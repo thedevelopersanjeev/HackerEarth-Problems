@@ -46,10 +46,10 @@ void writeContainer(T &t) {
 }
 
 auto speedup = []() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    return nullptr;
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
+	return nullptr;
 }();
 
 void solve(int tc) {
