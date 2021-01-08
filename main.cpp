@@ -36,12 +36,16 @@ void write(T &&... args) {
 
 template <typename T>
 void readContainer(T &t) {
-	for (auto &e : t) read(e);
+	for (auto &e : t) {
+		read(e);
+	}
 }
 
 template <typename T>
 void writeContainer(T &t) {
-	for (const auto &e : t) write(e, " ");
+	for (const auto &e : t) {
+		write(e, " ");
+	}
 	write("\n");
 }
 
@@ -58,6 +62,8 @@ void solve(int tc) {
 signed main() {
 	int tc = 1;
 	read(tc);
-	for (int curr = 1; curr <= tc; curr++) solve(curr);
+	for (int curr = 1; curr <= tc; curr++) {
+		solve(curr);
+	}
 	return 0;
 }
