@@ -1,12 +1,11 @@
 int Solution::solve(vector<string> &A) {
-
 	long long n = A.size();
 	vector<long long> v(n);
 	for (long long i = 0; i < n; i++) {
 		long long x = A[i].size();
-		if (x <= 1)
+		if (x <= 1) {
 			v[i] = 1;
-		else {
+		} else {
 			long long k = 1, c = 0;
 			while (1) {
 				c = (k * (k + 1)) / 2;
@@ -26,5 +25,4 @@ int Solution::solve(vector<string> &A) {
 		ans = (long long)(ans % 1000000007 * (v[i]) % 1000000007) % 1000000007;
 	}
 	return ans;
-
 }

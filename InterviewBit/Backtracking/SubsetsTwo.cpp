@@ -10,9 +10,7 @@ void findAnswer(vector<int> &arr, int i, vector<int> &curr, vector<vector<int>> 
 }
 
 vector<vector<int>> Solution::subsetsWithDup(vector<int> &arr) {
-
 	int n = arr.size();
-
 	vector<int> curr;
 	vector<vector<int>> ans;
 	sort(arr.begin(), arr.end());
@@ -20,11 +18,12 @@ vector<vector<int>> Solution::subsetsWithDup(vector<int> &arr) {
 	ans.clear();
 	findAnswer(arr, 0, curr, ans);
 	set<vector<int>> st;
-	for (auto ele : ans)
+	for (auto ele : ans) {
 		st.insert(ele);
+	}
 	ans.clear();
-	for (auto ele : st)
+	for (auto ele : st) {
 		ans.push_back(ele);
+	}
 	return ans;
-
 }

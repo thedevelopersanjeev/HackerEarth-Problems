@@ -6,28 +6,23 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-ListNode* Solution::mergeTwoLists(ListNode* A, ListNode* B) {
-
-	if (A == NULL && B == NULL)
+ListNode *Solution::mergeTwoLists(ListNode *A, ListNode *B) {
+	if (A == NULL && B == NULL) {
 		return NULL;
-
-	if (A == NULL)
+	}
+	if (A == NULL) {
 		return B;
-
-	if (B == NULL)
+	}
+	if (B == NULL) {
 		return A;
-
-	ListNode* ans;
-
+	}
+	ListNode *ans;
 	if (A->val < B->val) {
 		ans = A;
 		ans->next = mergeTwoLists(A->next, B);
-	}
-	else {
+	} else {
 		ans = B;
 		ans->next = mergeTwoLists(A, B->next);
 	}
-
 	return ans;
-
 }

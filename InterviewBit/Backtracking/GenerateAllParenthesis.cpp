@@ -5,8 +5,7 @@ void generateParenthesisUtil(int n, int open, int closed) {
 	if (closed == n) {
 		ans.push_back(curr);
 		return;
-	}
-	else {
+	} else {
 		if (open > closed) {
 			curr += ")";
 			generateParenthesisUtil(n, open, closed + 1);

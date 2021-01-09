@@ -7,7 +7,7 @@
  * };
  */
 
-int findLength(ListNode* head) {
+int findLength(ListNode *head) {
 	int ans = 0;
 	while (head != NULL) {
 		ans++;
@@ -16,15 +16,16 @@ int findLength(ListNode* head) {
 	return ans;
 }
 
-ListNode* Solution::rotateRight(ListNode* head, int k) {
-
+ListNode *Solution::rotateRight(ListNode *head, int k) {
 	int len = findLength(head);
 	k %= len;
-	if (k == 0 || head == NULL || head->next == NULL)
+	if (k == 0 || head == NULL || head->next == NULL) {
 		return head;
-	ListNode* temp = head;
-	while (temp->next != NULL)
+	}
+	ListNode *temp = head;
+	while (temp->next != NULL) {
 		temp = temp->next;
+	}
 	temp->next = head;
 	head = head->next;
 	temp = temp->next;
@@ -34,5 +35,4 @@ ListNode* Solution::rotateRight(ListNode* head, int k) {
 	}
 	temp->next = NULL;
 	return head;
-
 }

@@ -8,18 +8,17 @@
  * };
  */
 
-void f(TreeNode* root, vector<int> &arr) {
-	if (root == NULL)
+void f(TreeNode *root, vector<int> &arr) {
+	if (root == NULL) {
 		return;
+	}
 	f(root->left, arr);
 	arr.push_back(root->val);
 	f(root->right, arr);
 }
 
-int Solution::kthsmallest(TreeNode* root, int k) {
-
+int Solution::kthsmallest(TreeNode *root, int k) {
 	vector<int> arr;
 	f(root, arr);
 	return arr[k - 1];
-
 }

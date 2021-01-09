@@ -15,12 +15,9 @@ void dfs(vector<string> &board, int i, int j) {
 }
 
 int Solution::black(vector<string> &board) {
-
 	int n = board.size();
 	int m = board[0].size();
-
 	int cnt = 0;
-
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
 			if (board[i][j] == 'X') {
@@ -29,7 +26,5 @@ int Solution::black(vector<string> &board) {
 			}
 		}
 	}
-
 	return cnt;
-
 }

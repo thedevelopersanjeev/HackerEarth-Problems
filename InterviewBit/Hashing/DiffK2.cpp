@@ -1,5 +1,4 @@
 int Solution::diffPossible(const vector<int> &arr, int k) {
-
 	int n = arr.size();
 	if (n <= 1) {
 		return 0;
@@ -12,5 +11,4 @@ int Solution::diffPossible(const vector<int> &arr, int k) {
 		mp[ele] = 1;
 	}
 	return 0;
-
 }

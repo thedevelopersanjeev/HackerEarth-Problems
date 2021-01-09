@@ -1,5 +1,4 @@
 int Solution::adjacent(vector<vector<int>> &arr) {
-
 	int n = arr[0].size();
 	int A = 0, B = max(arr[0][0], arr[1][0]);
 	for (int j = 1; j < n; j++) {
@@ -8,5 +7,4 @@ int Solution::adjacent(vector<vector<int>> &arr) {
 		A = temp;
 	}
 	return max(A, B);
-
 }

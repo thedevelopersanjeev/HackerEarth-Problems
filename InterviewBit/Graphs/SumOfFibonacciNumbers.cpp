@@ -14,8 +14,9 @@ int Solution::fibsum(int n) {
 			n -= curr;
 			ans++;
 		}
-		if (n == 0)
+		if (n == 0) {
 			break;
+		}
 	}
 	return ans;
 }

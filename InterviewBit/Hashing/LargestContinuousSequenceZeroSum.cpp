@@ -1,5 +1,4 @@
 vector<int> Solution::lszero(vector<int> &arr) {
-
 	unordered_map<int, int> mp;
 	int sum = 0, maxLen = 0, maxIndex = 0, n = arr.size();
 	for (int i = 0; i < n; i++) {
@@ -17,8 +16,7 @@ vector<int> Solution::lszero(vector<int> &arr) {
 				maxLen = i - mp[sum];
 				maxIndex = i;
 			}
-		}
-		else {
+		} else {
 			mp[sum] = i;
 		}
 	}
@@ -29,5 +27,4 @@ vector<int> Solution::lszero(vector<int> &arr) {
 		k++;
 	}
 	return ans;
-
 }

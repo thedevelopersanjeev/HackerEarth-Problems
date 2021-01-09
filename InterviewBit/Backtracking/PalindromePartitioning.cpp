@@ -21,10 +21,8 @@ void f(int index, vector<string> &arr, vector<vector<string>> &ans, string s) {
 }
 
 vector<vector<string>> Solution::partition(string s) {
-
 	vector<vector<string>> ans;
 	vector<string> arr;
 	f(0, arr, ans, s);
 	return ans;
-
 }

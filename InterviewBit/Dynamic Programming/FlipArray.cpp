@@ -8,11 +8,10 @@ int Solution::solve(const vector<int> &A) {
 		for (int j = 1; j <= n; j++) {
 			if (A[j - 1] > i) {
 				dp[i][j] = dp[i][j - 1];
-			}
-			else {
+			} else {
 				pair<int, int> incl{dp[i - A[j - 1]][j - 1].first + A[j - 1], 1 + dp[i - A[j - 1]][j - 1].second};
 				pair<int, int> excl{dp[i][j - 1].first, dp[i][j - 1].second};
-				auto comp = [](const pair<int, int>& a, const pair<int, int>& b) {
+				auto comp = [](const pair<int, int> &a, const pair<int, int> &b) {
 					if (a.first == b.first) {
 						return a.second < b.second;
 					}

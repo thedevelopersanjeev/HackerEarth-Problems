@@ -1,7 +1,8 @@
 int Solution::maxProfit(const vector<int> &prices) {
 	int n = prices.size();
-	if (n < 2)
+	if (n < 2) {
 		return 0;
+	}
 	vector<vector<int>> dp(3, vector<int>(n, 0));
 	for (int i = 1; i < 3; i++) {
 		int mx = INT_MIN;

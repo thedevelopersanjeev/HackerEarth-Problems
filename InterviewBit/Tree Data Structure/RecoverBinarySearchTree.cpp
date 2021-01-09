@@ -7,20 +7,16 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-vector<int> Solution::recoverTree(TreeNode* root) {
-
-	TreeNode* first = NULL;
-	TreeNode* second = NULL;
-	TreeNode* prev = NULL;
-
-	stack<TreeNode*> st;
-
+vector<int> Solution::recoverTree(TreeNode *root) {
+	TreeNode *first = NULL;
+	TreeNode *second = NULL;
+	TreeNode *prev = NULL;
+	stack<TreeNode *> st;
 	while (!st.empty() || root != NULL) {
 		if (root != NULL) {
 			st.push(root);
 			root = root->left;
-		}
-		else {
+		} else {
 			root = st.top();
 			st.pop();
 			if (prev != NULL && root->val <= prev->val) {
@@ -33,7 +29,5 @@ vector<int> Solution::recoverTree(TreeNode* root) {
 			root = root->right;
 		}
 	}
-
 	return vector<int> {min(first->val, second->val), max(first->val, second->val)};
-
 }

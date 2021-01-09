@@ -6,8 +6,9 @@ long long f(long long n, long long m) {
 	if (n <= 1) {
 		return m == 0;
 	}
-	if (dp[n][m] != -1)
+	if (dp[n][m] != -1) {
 		return dp[n][m];
+	}
 	long long ans = 0;
 	for (long long i = 1; i <= n; i++) {
 		long long x = i - 1;

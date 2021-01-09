@@ -1,5 +1,4 @@
 int Solution::findMedian(vector<vector<int>> &arr) {
-
 	int m = arr.size();
 	int n = arr[0].size();
 	int mn = INT_MAX;
@@ -15,15 +14,12 @@ int Solution::findMedian(vector<vector<int>> &arr) {
 		int cnt = 0;
 		for (auto row : arr) {
 			cnt += upper_bound(row.begin(), row.end(), mid) - row.begin();
-
 		}
 		if (cnt < desire) {
 			lo = mid + 1;
-		}
-		else {
+		} else {
 			hi = mid;
 		}
 	}
 	return lo;
-
 }

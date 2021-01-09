@@ -8,9 +8,9 @@
  * };
  */
 
-stack<TreeNode*> st;
+stack<TreeNode *> st;
 
-void insert(TreeNode* root) {
+void insert(TreeNode *root) {
 	while (root != NULL) {
 		st.push(root);
 		root = root->left;
@@ -18,7 +18,7 @@ void insert(TreeNode* root) {
 }
 
 BSTIterator::BSTIterator(TreeNode *root) {
-	st = stack<TreeNode*>();
+	st = stack<TreeNode *>();
 	insert(root);
 }
 

@@ -1,5 +1,4 @@
 vector<int> Solution::equal(vector<int> &arr) {
-
 	unordered_map<int, pair<int, int>> mp;
 	vector<int> ans;
 	vector<pair<pair<int, int>, pair<int, int>>> ss;
@@ -18,12 +17,11 @@ vector<int> Solution::equal(vector<int> &arr) {
 			}
 		}
 	}
-	if (ss.size() == 0) return ans;
+	if (ss.size() == 0) { return ans; }
 	sort(ss.begin(), ss.end());
 	ans.push_back(ss[0].first.first);
 	ans.push_back(ss[0].first.second);
 	ans.push_back(ss[0].second.first);
 	ans.push_back(ss[0].second.second);
 	return ans;
-
 }

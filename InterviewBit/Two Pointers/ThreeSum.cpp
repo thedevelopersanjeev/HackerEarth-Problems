@@ -1,5 +1,4 @@
 int Solution::threeSumClosest(vector<int> &arr, int k) {
-
 	sort(arr.begin(), arr.end());
 	long long n = arr.size();
 	long long diff = LLONG_MAX, ans;
@@ -15,5 +14,4 @@ int Solution::threeSumClosest(vector<int> &arr, int k) {
 		}
 	}
 	return ans;
-
 }

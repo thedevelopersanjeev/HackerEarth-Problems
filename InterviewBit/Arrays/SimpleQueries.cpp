@@ -1,18 +1,18 @@
 #define ll long long int
 const int mn = 1e5 + 5;
 const ll mod = 1e9 + 7;
-ll power(ll a, ll g) {ll ag = 1; while (g) {if (g & 1) ag = (ag % mod * a % mod) % mod; a = (a % mod * a % mod) % mod; g >>= 1;} return ag;}
+ll power(ll a, ll g) {ll ag = 1; while (g) {if (g & 1) { ag = (ag % mod * a % mod) % mod; } a = (a % mod * a % mod) % mod; g >>= 1;} return ag;}
 
 ll p[mn];
 
 void pre_compute_product_of_divisors() {
 	p[0] = 0; p[1] = 1;
-	if (p[2] != 0) return;
+	if (p[2] != 0) { return; }
 	for (ll i = 2; i < mn; i += 1) {
 		if (p[i] == 0) {
 			p[i] = 2;
 			for (ll j = i + i; j < mn; j += i) {
-				if (p[j] == 0) p[j] = 1;
+				if (p[j] == 0) { p[j] = 1; }
 				ll tmp = j;
 				ll cnt = 0;
 				while (tmp % i == 0) {
@@ -29,10 +29,11 @@ void pre_compute_product_of_divisors() {
 }
 
 bool compare(pair<int, long long int> a, pair<int, long long int> g) {
-	if (a.first == g.first)
+	if (a.first == g.first) {
 		return a.second < g.second;
-	else
+	} else {
 		return a.first > g.first;
+	}
 }
 
 vector<int> Solution::solve(vector<int> &A, vector<int> &B) {

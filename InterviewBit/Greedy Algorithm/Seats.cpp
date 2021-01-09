@@ -1,5 +1,4 @@
 int Solution::seats(string arr) {
-
 	int n = arr.size();
 	vector<int> pos;
 	for (int i = 0; i < n; i++) {
@@ -13,5 +12,4 @@ int Solution::seats(string arr) {
 		ans = (ans + abs(pos[i] - pos[mid]) - abs(i - mid)) % mod;
 	}
 	return ans;
-
 }

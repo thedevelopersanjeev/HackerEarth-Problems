@@ -44,7 +44,6 @@ bool isValid(const vector<string> &board, int i, int j) {
 }
 
 int Solution::isValidSudoku(const vector<string> &board) {
-
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
 			if (!isValid(board, i, j)) {
@@ -52,7 +51,5 @@ int Solution::isValidSudoku(const vector<string> &board) {
 			}
 		}
 	}
-
 	return 1;
-
 }

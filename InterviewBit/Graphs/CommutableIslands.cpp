@@ -1,6 +1,7 @@
 int find(vector<int> &parent, int i) {
-	if (parent[i] == -1)
+	if (parent[i] == -1) {
 		return i;
+	}
 	return find(parent, parent[i]);
 }
 

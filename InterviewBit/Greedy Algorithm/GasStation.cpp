@@ -1,5 +1,4 @@
 int Solution::canCompleteCircuit(const vector<int> &gas, const vector<int> &cost) {
-
 	int start = 0, total = 0, tank = 0;
 	int n = gas.size();
 	for (int i = 0; i < n; i++) {
@@ -10,5 +9,4 @@ int Solution::canCompleteCircuit(const vector<int> &gas, const vector<int> &cost
 		}
 	}
 	return (total + tank < 0) ? -1 : start;
-
 }

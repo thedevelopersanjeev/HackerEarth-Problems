@@ -16,8 +16,9 @@ int subarraySumUtil(vector<int> &arr, int target) {
 }
 
 int solveUtil(vector<vector<int>> &matrix, int target) {
-	if (matrix.size() == 0 || matrix[0].size() == 0)
+	if (matrix.size() == 0 || matrix[0].size() == 0) {
 		return 0;
+	}
 	int rowLen = matrix.size();
 	int colLen = matrix[0].size();
 	int ans = 0;
@@ -34,6 +35,5 @@ int solveUtil(vector<vector<int>> &matrix, int target) {
 }
 
 int Solution::solve(vector<vector<int>> &matrix) {
-
 	return solveUtil(matrix, 0);
 }

@@ -6,11 +6,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-ListNode* Solution::partition(ListNode* head, int x) {
-	ListNode* lessList = new ListNode(0);
-	ListNode* greaterList = new ListNode(0);
-	ListNode* lessListHead = lessList;
-	ListNode* greaterListHead = greaterList;
+ListNode *Solution::partition(ListNode *head, int x) {
+	ListNode *lessList = new ListNode(0);
+	ListNode *greaterList = new ListNode(0);
+	ListNode *lessListHead = lessList;
+	ListNode *greaterListHead = greaterList;
 	while (head != NULL) {
 		if (head->val >= x) {
 			greaterList->next = new ListNode(head->val);

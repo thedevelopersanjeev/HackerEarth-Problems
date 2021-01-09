@@ -15,6 +15,5 @@ vector<int> Solution::subUnsort(vector<int> &arr) {
 		}
 		temp = min(temp, arr[i]);
 	}
-
 	return lo == -1 ? vector<int> {lo} : vector<int> {lo, hi};
 }

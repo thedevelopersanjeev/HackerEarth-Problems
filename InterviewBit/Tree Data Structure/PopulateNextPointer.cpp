@@ -6,26 +6,29 @@
  *  TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
  * };
  */
-void Solution::connect(TreeLinkNode* root) {
-
-	if (root == NULL)
+void Solution::connect(TreeLinkNode *root) {
+	if (root == NULL) {
 		return;
-	queue<TreeLinkNode*> q;
+	}
+	queue<TreeLinkNode *> q;
 	q.push(root);
 	q.push(NULL);
 	while (!q.empty()) {
-		TreeLinkNode* curr = q.front();
+		TreeLinkNode *curr = q.front();
 		q.pop();
 		if (curr == NULL) {
-			if (q.empty())
+			if (q.empty()) {
 				break;
+			}
 			q.push(NULL);
 			continue;
 		}
 		curr->next = q.front();
-		if (curr->left != NULL)
+		if (curr->left != NULL) {
 			q.push(curr->left);
-		if (curr->right != NULL)
+		}
+		if (curr->right != NULL) {
 			q.push(curr->right);
+		}
 	}
 }

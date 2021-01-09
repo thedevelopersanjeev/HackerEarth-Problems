@@ -1,13 +1,11 @@
 int f(const vector<int> &arr, int lo, int hi, int x) {
-	if(hi >= lo) {
+	if (hi >= lo) {
 		int mid = lo + (hi - lo) / 2;
-		if((mid == 0 || x > arr[mid - 1]) && x == arr[mid]) {
+		if ((mid == 0 || x > arr[mid - 1]) && x == arr[mid]) {
 			return mid;
-		}
-		else if(x > arr[mid]) {
+		} else if (x > arr[mid]) {
 			return f(arr, mid + 1, hi, x);
-		}
-		else {
+		} else {
 			return f(arr, lo, mid - 1, x);
 		}
 	}
@@ -15,15 +13,13 @@ int f(const vector<int> &arr, int lo, int hi, int x) {
 }
 
 int g(const vector<int> &arr, int lo, int hi, int x) {
-	if(hi >= lo) {
+	if (hi >= lo) {
 		int mid = lo + (hi - lo) / 2;
-		if((mid == arr.size() - 1 || x < arr[mid + 1]) && x == arr[mid]) {
+		if ((mid == arr.size() - 1 || x < arr[mid + 1]) && x == arr[mid]) {
 			return mid;
-		}
-		else if(x < arr[mid]) {
+		} else if (x < arr[mid]) {
 			return g(arr, lo, mid - 1, x);
-		}
-		else {
+		} else {
 			return g(arr, mid + 1, hi, x);
 		}
 	}
@@ -31,7 +27,5 @@ int g(const vector<int> &arr, int lo, int hi, int x) {
 }
 
 vector<int> Solution::searchRange(const vector<int> &arr, int x) {
-
-	return vector<int>{f(arr, 0, arr.size() - 1, x), g(arr, 0, arr.size() - 1, x)};
-
+	return vector<int> {f(arr, 0, arr.size() - 1, x), g(arr, 0, arr.size() - 1, x)};
 }

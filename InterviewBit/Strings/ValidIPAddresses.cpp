@@ -12,8 +12,9 @@ bool isValid(string s) {
 vector<string> Solution::restoreIpAddresses(string s) {
 	int n = s.size();
 	vector<string> ans;
-	if (n < 4 || n > 12)
+	if (n < 4 || n > 12) {
 		return ans;
+	}
 	if (n == 12) {
 		string ip = "";
 		for (int i = 0; i < 12; i++) {

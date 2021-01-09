@@ -12,8 +12,7 @@ vector<string> Solution::prettyJSON(string A) {
 		case '[' :
 			if (braces == 1 && rows == 0) {
 				ans[rows] += A[i];
-			}
-			else {
+			} else {
 				ans.push_back("");
 				ans[++rows] += string(braces, '\t');
 				ans[rows] += A[i];
@@ -29,8 +28,7 @@ vector<string> Solution::prettyJSON(string A) {
 				ans[++rows] += string(braces - 1, '\t');
 				ans[rows] += A[i];
 				--braces;
-			}
-			else {
+			} else {
 				ans.push_back("");
 				ans[++rows] += A[i];
 				--braces;
@@ -40,8 +38,7 @@ vector<string> Solution::prettyJSON(string A) {
 			ans[rows] += A[i];
 			if (A[i + 1] == '{' || A[i + 1] == '[') {
 				continue;
-			}
-			else {
+			} else {
 				ans.push_back("");
 				ans[++rows] += string(braces, '\t');
 			}

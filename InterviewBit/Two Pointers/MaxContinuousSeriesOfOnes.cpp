@@ -1,5 +1,4 @@
 vector<int> Solution::maxone(vector<int> &arr, int m) {
-
 	long long n = arr.size();
 	long long i = 0LL, j = 0LL, zeros = 0LL, mx = LLONG_MIN;
 	long long s, e;
@@ -23,8 +22,8 @@ vector<int> Solution::maxone(vector<int> &arr, int m) {
 		}
 	}
 	vector<int> ans;
-	for (int i = s; i < e; i++)
+	for (int i = s; i < e; i++) {
 		ans.push_back(i);
+	}
 	return ans;
-
 }

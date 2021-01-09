@@ -1,7 +1,5 @@
 bool areMatchingPair(char x, char y) {
-
 	return (x == '(' && y == ')') || (x == '{' && y == '}') || (x == '[' && y == ']');
-
 }
 
 bool isOpening(char ch) {
@@ -9,22 +7,18 @@ bool isOpening(char ch) {
 }
 
 int Solution::isValid(string s) {
-
 	// () , {} , []
 	stack<char> st;
 	for (auto ele : s) {
 		if (isOpening(ele)) {
 			st.push(ele);
-		}
-		else {
+		} else {
 			if (st.empty() || !areMatchingPair(st.top(), ele)) {
 				return 0;
-			}
-			else {
+			} else {
 				st.pop();
 			}
 		}
 	}
 	return st.empty();
-
 }

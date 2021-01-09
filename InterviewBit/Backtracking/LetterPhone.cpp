@@ -1,5 +1,4 @@
 vector<string> Solution::letterCombinations(string s) {
-
 	vector<string> ans;
 	string mp[10] = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 	ans.push_back("");
@@ -15,5 +14,4 @@ vector<string> Solution::letterCombinations(string s) {
 	}
 	sort(ans.begin(), ans.end());
 	return ans;
-
 }

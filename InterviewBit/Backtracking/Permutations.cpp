@@ -11,9 +11,7 @@ void f(vector<int> &arr, int begin, vector<vector<int>> &ans) {
 }
 
 vector<vector<int>> Solution::permute(vector<int> &arr) {
-
 	vector<vector<int>> ans;
 	f(arr, 0, ans);
 	return ans;
-
 }

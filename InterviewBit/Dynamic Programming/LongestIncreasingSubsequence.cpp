@@ -1,5 +1,4 @@
 int Solution::lis(const vector<int> &arr) {
-
 	int n = arr.size();
 	if (n <= 1) {
 		return n;
@@ -13,5 +12,4 @@ int Solution::lis(const vector<int> &arr) {
 		}
 	}
 	return *max_element(ans.begin(), ans.end());
-
 }

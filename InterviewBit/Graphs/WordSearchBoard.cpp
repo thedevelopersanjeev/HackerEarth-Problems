@@ -1,8 +1,10 @@
 int dfs(vector<string> &board, string word, int i, int j, int m, int n, int x) {
-	if (i < 0 || j < 0 || i >= m || j >= n || board[i][j] != word[x])
+	if (i < 0 || j < 0 || i >= m || j >= n || board[i][j] != word[x]) {
 		return 0;
-	if (x == word.size() - 1)
+	}
+	if (x == word.size() - 1) {
 		return 1;
+	}
 	return dfs(board, word, i + 1, j, m, n, x + 1) || dfs(board, word, i, j + 1, m, n, x + 1) || dfs(board, word, i, j - 1, m, n, x + 1) || dfs(board, word, i - 1, j, m, n, x + 1);
 }
 

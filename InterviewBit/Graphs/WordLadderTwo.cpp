@@ -4,8 +4,9 @@ vector<vector<string>> Solution::findLadders(string beginWord, string endWord, v
 		return ans;
 	}
 	unordered_set<string> wordList;
-	for (auto ele : wordsList)
+	for (auto ele : wordsList) {
 		wordList.insert(ele);
+	}
 	vector<vector<string>> ans;
 	queue<vector<string>> paths;
 	paths.push({beginWord});
@@ -16,12 +17,13 @@ vector<vector<string>> Solution::findLadders(string beginWord, string endWord, v
 		vector<string> path = paths.front();
 		paths.pop();
 		if (path.size() > level) {
-			for (string w : visited) wordList.erase(w);
+			for (string w : visited) { wordList.erase(w); }
 			visited.clear();
-			if (path.size() > minLevel)
+			if (path.size() > minLevel) {
 				break;
-			else
+			} else {
 				level = path.size();
+			}
 		}
 		string last = path.back();
 		for (int i = 0; i < last.size(); ++i) {
@@ -35,9 +37,9 @@ vector<vector<string>> Solution::findLadders(string beginWord, string endWord, v
 					if (news == endWord) {
 						minLevel = level;
 						ans.push_back(newpath);
-					}
-					else
+					} else {
 						paths.push(newpath);
+					}
 				}
 			}
 		}

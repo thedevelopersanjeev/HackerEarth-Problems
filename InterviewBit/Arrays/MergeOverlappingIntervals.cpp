@@ -8,16 +8,15 @@
  * };
  */
 vector<Interval> Solution::merge(vector<Interval> &intervals) {
-	
-	sort(intervals.begin(), intervals.end(), [](const Interval &A, const Interval &B) -> bool {
+	sort(intervals.begin(), intervals.end(), [](const Interval & A, const Interval & B) -> bool {
 		return A.start < B.start;
 	});
 	int n = intervals.size();
 	vector<Interval> ans;
 	ans.push_back(intervals[0]);
-	for(int i = 1; i < n; i++) {
+	for (int i = 1; i < n; i++) {
 		// if overlapping, update ending point of my answer
-		if(intervals[i].start <= ans[ans.size() - 1].end) {
+		if (intervals[i].start <= ans[ans.size() - 1].end) {
 			ans[ans.size() - 1].end = max(intervals[i].end, ans[ans.size() - 1].end);
 		}
 		// else, add new interval to answer
@@ -26,5 +25,4 @@ vector<Interval> Solution::merge(vector<Interval> &intervals) {
 		}
 	}
 	return ans;
-	
 }

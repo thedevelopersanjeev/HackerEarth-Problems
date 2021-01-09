@@ -1,5 +1,4 @@
 int Solution::lengthOfLongestSubstring(string s) {
-
 	int n = s.size();
 	unordered_map<char, int> mp;
 	int ans = 0;
@@ -13,5 +12,4 @@ int Solution::lengthOfLongestSubstring(string s) {
 		ans = max(ans, i - j + 1);
 	}
 	return ans;
-
 }

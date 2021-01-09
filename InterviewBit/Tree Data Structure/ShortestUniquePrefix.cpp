@@ -27,18 +27,21 @@ string queryWord(string word) {
 		ans += ch;
 		int index = ch - 'a';
 		pos = trie[pos].sons[index];
-		if (trie[pos].many == 1)
+		if (trie[pos].many == 1) {
 			return ans;
+		}
 	}
 	return word;
 }
 
 vector<string> Solution::prefix(vector<string> &words) {
 	memset(trie, 0, sizeof(trie));
-	for (auto &word : words)
+	for (auto &word : words) {
 		addWord(word);
+	}
 	vector<string> ans;
-	for (auto &word : words)
+	for (auto &word : words) {
 		ans.push_back(queryWord(word));
+	}
 	return ans;
 }

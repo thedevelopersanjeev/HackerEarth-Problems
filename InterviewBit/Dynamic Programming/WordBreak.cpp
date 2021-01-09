@@ -1,6 +1,5 @@
 int Solution::wordBreak(string s, vector<string> &dict) {
-
-	if (dict.size() == 0) return false;
+	if (dict.size() == 0) { return false; }
 	vector<bool> dp(s.size() + 1, false);
 	dp[0] = true;
 	for (int i = 1; i <= s.size(); i++) {
@@ -15,5 +14,4 @@ int Solution::wordBreak(string s, vector<string> &dict) {
 		}
 	}
 	return dp[s.size()];
-
 }

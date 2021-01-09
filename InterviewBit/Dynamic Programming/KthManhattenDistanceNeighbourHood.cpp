@@ -1,5 +1,4 @@
 vector<vector<int>> Solution::solve(int k, vector<vector<int> > &matrix) {
-
 	int m = matrix.size(), n = matrix[0].size();
 	vector<vector<int>> dp = matrix;
 	for (int dist = 0; dist < k; dist++) {
@@ -16,5 +15,4 @@ vector<vector<int>> Solution::solve(int k, vector<vector<int> > &matrix) {
 		matrix = dp;
 	}
 	return matrix;
-
 }

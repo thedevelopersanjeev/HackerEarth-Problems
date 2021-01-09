@@ -1,14 +1,15 @@
 int Solution::isScramble(const string str1, const string str2) {
 	int n = str1.size();
-	if (n == 0)
+	if (n == 0) {
 		return true;
-	else if (n == 1)
+	} else if (n == 1) {
 		return str1 == str2;
+	}
 	bool dp[n + 1][n][n];
 	for (int i = 0 ; i < n ; i++)
-		for (int j = 0 ; j < n ; j++)
+		for (int j = 0 ; j < n ; j++) {
 			dp[1][i][j] = (str1[i] == str2[j]);
-
+		}
 	for (int len = 2 ; len <= n ; len++) {
 		for (int i = 0 ; i <= n - len ; i++) {
 			for (int j = 0 ; j <= n - len ; j++) {

@@ -1,5 +1,4 @@
 int Solution::maxProduct(const vector<int> &arr) {
-
 	int pre = 1, pos = 1, ans = INT_MIN, n = arr.size();
 	for (int i = 0; i < n; i++) {
 		pre *= arr[i];
@@ -9,5 +8,4 @@ int Solution::maxProduct(const vector<int> &arr) {
 		pos = pos == 0 ? 1 : pos;
 	}
 	return ans;
-
 }

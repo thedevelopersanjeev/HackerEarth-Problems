@@ -8,7 +8,7 @@
  * };
  */
 
-int isBalancedUtil(TreeNode* root) {
+int isBalancedUtil(TreeNode *root) {
 	if (root == NULL) {
 		return 0;
 	}
@@ -16,17 +16,15 @@ int isBalancedUtil(TreeNode* root) {
 	int right = isBalancedUtil(root->right);
 	if (left != -1 && right != -1 && abs(left - right) <= 1) {
 		return 1 + max(left, right);
-	}
-	else {
+	} else {
 		return -1;
 	}
 }
 
-int Solution::isBalanced(TreeNode* root) {
-
-	if (isBalancedUtil(root) != -1)
+int Solution::isBalanced(TreeNode *root) {
+	if (isBalancedUtil(root) != -1) {
 		return 1;
-	else
+	} else {
 		return 0;
-
+	}
 }

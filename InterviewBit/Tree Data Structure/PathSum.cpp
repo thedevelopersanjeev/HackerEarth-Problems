@@ -8,7 +8,7 @@
  * };
  */
 
-int hasPathSumUtil(TreeNode* root, int target, int current) {
+int hasPathSumUtil(TreeNode *root, int target, int current) {
 	if (root == NULL) {
 		return 0;
 	}
@@ -18,8 +18,6 @@ int hasPathSumUtil(TreeNode* root, int target, int current) {
 	return hasPathSumUtil(root->left, target, current + root->val) || hasPathSumUtil(root->right, target, current + root->val);
 }
 
-int Solution::hasPathSum(TreeNode* root, int target) {
-
+int Solution::hasPathSum(TreeNode *root, int target) {
 	return hasPathSumUtil(root, target, 0);
-
 }

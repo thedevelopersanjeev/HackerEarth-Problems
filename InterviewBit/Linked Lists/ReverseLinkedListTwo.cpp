@@ -6,26 +6,21 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-ListNode* Solution::reverseBetween(ListNode* head, int m, int n) {
-
-	if (head == NULL)
+ListNode *Solution::reverseBetween(ListNode *head, int m, int n) {
+	if (head == NULL) {
 		return head;
-
-	ListNode* curr = head;
-	ListNode* prev = NULL;
-
+	}
+	ListNode *curr = head;
+	ListNode *prev = NULL;
 	while (m > 1) {
 		prev = curr;
 		curr = curr->next;
 		m--;
 		n--;
 	}
-
-	ListNode* conn = prev;
-	ListNode* tail = curr;
-
-	ListNode* temp = NULL;
-
+	ListNode *conn = prev;
+	ListNode *tail = curr;
+	ListNode *temp = NULL;
 	while (n > 0) {
 		temp = curr->next;
 		curr->next = prev;
@@ -33,16 +28,11 @@ ListNode* Solution::reverseBetween(ListNode* head, int m, int n) {
 		curr = temp;
 		n--;
 	}
-
 	if (conn != NULL) {
 		conn->next = prev;
-	}
-	else {
+	} else {
 		head = prev;
 	}
-
 	tail->next = curr;
-
 	return head;
-
 }

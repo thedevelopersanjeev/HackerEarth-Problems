@@ -10,9 +10,7 @@ void findAnswer(vector<int> &arr, int i, vector<int> &curr, vector<vector<int>> 
 }
 
 vector<vector<int>> Solution::subsets(vector<int> &arr) {
-
 	int n = arr.size();
-
 	vector<int> curr;
 	vector<vector<int>> ans;
 	sort(arr.begin(), arr.end());
@@ -20,5 +18,4 @@ vector<vector<int>> Solution::subsets(vector<int> &arr) {
 	ans.clear();
 	findAnswer(arr, 0, curr, ans);
 	return ans;
-
 }

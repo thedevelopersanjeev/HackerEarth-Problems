@@ -12,17 +12,20 @@
  * }
  */
 
-bool isPresent(TreeNode* root, int val) {
-	if (root == NULL)
+bool isPresent(TreeNode *root, int val) {
+	if (root == NULL) {
 		return false;
-	if (root->val == val)
+	}
+	if (root->val == val) {
 		return true;
+	}
 	return isPresent(root->left, val) || isPresent(root->right, val);
 }
 
-bool findLCA(TreeNode* root, TreeNode* &ans, int A, int B) {
-	if (root == NULL)
+bool findLCA(TreeNode *root, TreeNode *&ans, int A, int B) {
+	if (root == NULL) {
 		return false;
+	}
 	if (root->val == A || root->val == B) {
 		ans = root;
 		return true;
@@ -36,10 +39,11 @@ bool findLCA(TreeNode* root, TreeNode* &ans, int A, int B) {
 }
 
 
-int Solution::lca(TreeNode* root, int A, int B) {
-	TreeNode* ans = NULL;
-	if (isPresent(root, A) && isPresent(root, B))
+int Solution::lca(TreeNode *root, int A, int B) {
+	TreeNode *ans = NULL;
+	if (isPresent(root, A) && isPresent(root, B)) {
 		findLCA(root, ans, A, B);
+	}
 	return ans != NULL ? ans->val : -1;
 }
 

@@ -28,7 +28,7 @@ int maximalRectangleUtil(vector<int> v) {
 int Solution::maximalRectangle(vector<vector<int>> &matrix) {
 	int m = matrix.size();
 	int n = m == 0 ? 0 : matrix[0].size();
-	if (m == 0 || n == 0) return 0;
+	if (m == 0 || n == 0) { return 0; }
 	vector<int> v(n, 0);
 	int res = 0;
 	for (int i = 0; i < m; i++) {

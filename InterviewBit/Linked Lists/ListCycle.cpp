@@ -6,15 +6,14 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-ListNode* Solution::detectCycle(ListNode* head) {
-	ListNode* slow = head;
-	ListNode* fast = head;
-
+ListNode *Solution::detectCycle(ListNode *head) {
+	ListNode *slow = head;
+	ListNode *fast = head;
 	while (slow != NULL && fast != NULL && fast->next != NULL) {
 		slow = slow->next;
 		fast = fast->next->next;
 		if (slow == fast) {
-			ListNode* temp = head;
+			ListNode *temp = head;
 			while (temp != slow) {
 				slow = slow->next;
 				temp = temp->next;
@@ -22,6 +21,5 @@ ListNode* Solution::detectCycle(ListNode* head) {
 			return temp;
 		}
 	}
-
 	return NULL;
 }

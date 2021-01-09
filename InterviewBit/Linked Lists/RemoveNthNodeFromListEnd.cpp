@@ -6,10 +6,9 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-ListNode* Solution::removeNthFromEnd(ListNode* A, int k) {
-
+ListNode *Solution::removeNthFromEnd(ListNode *A, int k) {
 	int len = 0;
-	ListNode* temp = A;
+	ListNode *temp = A;
 	while (temp != NULL) {
 		len++;
 		temp = temp->next;
@@ -19,9 +18,9 @@ ListNode* Solution::removeNthFromEnd(ListNode* A, int k) {
 	}
 	int x = len - k - 1;
 	temp = A;
-	while (x--)
+	while (x--) {
 		temp = temp->next;
+	}
 	temp->next = temp->next->next;
 	return A;
-
 }

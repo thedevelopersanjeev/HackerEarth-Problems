@@ -4,12 +4,13 @@ int Solution::solve(vector<string> &arr) {
 	while (hi - lo >= 2) {
 		int mid = lo + (hi - lo) / 2;
 		double curr = stod(arr[lo]) + stod(arr[mid]) + stod(arr[hi]);
-		if (curr > 2)
+		if (curr > 2) {
 			hi--;
-		else if (curr < 1)
+		} else if (curr < 1) {
 			lo++;
-		else
+		} else {
 			return 1;
+		}
 	}
 	return 0;
 }

@@ -7,9 +7,8 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-vector<int> Solution::inorderTraversal(TreeNode* root) {
-
-	stack<TreeNode*> st;
+vector<int> Solution::inorderTraversal(TreeNode *root) {
+	stack<TreeNode *> st;
 	vector<int> ans;
 	while (root != NULL || !st.empty()) {
 		while (root != NULL) {
@@ -22,5 +21,4 @@ vector<int> Solution::inorderTraversal(TreeNode* root) {
 		root = root->right;
 	}
 	return ans;
-
 }

@@ -6,12 +6,10 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-ListNode* Solution::reverseList(ListNode* head) {
-
-	ListNode* curr = head;
-	ListNode* prev = NULL;
-	ListNode* next = NULL;
-
+ListNode *Solution::reverseList(ListNode *head) {
+	ListNode *curr = head;
+	ListNode *prev = NULL;
+	ListNode *next = NULL;
 	while (curr != NULL) {
 		next = curr->next;
 		curr->next = prev;
@@ -20,6 +18,4 @@ ListNode* Solution::reverseList(ListNode* head) {
 	}
 	head = prev;
 	return head;
-
-
 }

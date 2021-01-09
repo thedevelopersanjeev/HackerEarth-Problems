@@ -6,15 +6,12 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-ListNode* Solution::reverseList(ListNode* head) {
-
-	if(head == NULL || head->next == NULL) {
+ListNode *Solution::reverseList(ListNode *head) {
+	if (head == NULL || head->next == NULL) {
 		return head;
 	}
-
-	ListNode* res = reverseList(head->next);
+	ListNode *res = reverseList(head->next);
 	head->next->next = head;
 	head->next = NULL;
 	return res;
-
 }

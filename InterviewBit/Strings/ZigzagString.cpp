@@ -1,7 +1,8 @@
 string Solution::convert(string word, int rows) {
 	int n = word.size();
-	if (rows == 1)
+	if (rows == 1) {
 		return word;
+	}
 	vector<string> arr(rows);
 	int curr = 0;
 	bool flag = true;
@@ -20,7 +21,8 @@ string Solution::convert(string word, int rows) {
 		}
 	}
 	string ans = "";
-	for (auto ele : arr)
+	for (auto ele : arr) {
 		ans += ele;
+	}
 	return ans;
 }
