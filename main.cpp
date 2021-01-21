@@ -4,6 +4,7 @@
 #pragma GCC optimize("Ofast")
 
 #include <bits/stdc++.h>
+
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 
@@ -25,12 +26,12 @@ template <class T>
 using ordered_set = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 template <typename... T>
-void read(T &... args) {
+void read(T &...args) {
 	((cin >> args), ...);
 }
 
 template <typename... T>
-void write(T &&... args) {
+void write(T &&...args) {
 	((cout << args), ...);
 }
 
