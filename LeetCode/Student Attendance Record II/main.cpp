@@ -1,42 +1,42 @@
 class Solution {
   public:
-
-	const int mod = 1e9 + 7;
-
 	int checkRecord(int n) {
-		// 'A' <= 1 && "LL" not allowed
-		return (checkRecordUtil(0, 0, "L", n) + checkRecordUtil(0, 1, "A", n) + checkRecordUtil(0, 0, "P", n)) % mod;
+		return (checkRecordUtil(1, n, "A", 1) + checkRecordUtil(1, n, "L", 0) + checkRecordUtil(1, n, "P", 0)) % mod;
 	}
 
   private:
-	int checkRecordUtil(int index, int a, string prevTwo, int n) {
-		// cout << index << " " << a << " " << prevTwo << " " << n << "\n";
-		if (index == n - 1) {
+
+	int _cache[100001][2][12] = {0};
+	unordered_map<string, int> indexMap;
+	int cnt = -1;
+	const int mod = 1e9 + 7;
+
+	long checkRecordUtil(int index, int n, string previous, int numberOfATaken) {
+		if (index == n) {
 			return 1;
 		}
-		int x = 0;
-		if (a == 0) {
-			// cout << prevTwo << " " << prevTwo[1] << "\n";
-			if (prevTwo.size() == 2) {
-				x = checkRecordUtil(index + 1, a + 1, prevTwo[1] + 'A', n);
-			} else {
-				x = checkRecordUtil(index + 1, a + 1, "A", n);
-			}
+		long l = 0, a = 0, p = 0;
+		if (indexMap.find(previous) == indexMap.end()) {
+			cnt++;
+			indexMap[previous] = cnt;
 		}
-		int y = 0;
-		if (prevTwo != "LL") {
-			if (prevTwo.size() == 2) {
-				y = checkRecordUtil(index + 1, a, prevTwo[1] + "L", n);
-			} else {
-				y = checkRecordUtil(index + 1, a, "L", n);
-			}
+		int k = indexMap[previous];
+		if (_cache[index][numberOfATaken][k] != 0) {
+			return _cache[index][numberOfATaken][k];
 		}
-		int z = 0
-		if (prevTwo.size() == 2) {
-			z = checkRecordUtil(index + 1, a, prevTwo[1] + "P", n);
-		} else {
-			z = checkRecordUtil(index + 1, a, "P", n);
+		if (previous != "LL") {
+			l = checkRecordUtil(index + 1, n, getStringUtil(previous, "L"), numberOfATaken);
 		}
-		return (x + y + z) % mod;
+		if (numberOfATaken == 0) {
+			a = checkRecordUtil(index + 1, n, getStringUtil(previous, "A"), numberOfATaken + 1);
+		}
+		p = checkRecordUtil(index + 1, n, getStringUtil(previous, "P"), numberOfATaken);
+		return _cache[index][numberOfATaken][k] = (l + a + p) % mod;
 	}
+
+	string getStringUtil(const string &s, const string &t) {
+		int n = s.size();
+		return s[n - 1] + t;
+	}
+
 };
