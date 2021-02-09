@@ -7,20 +7,30 @@
  * };
  */
 
-ListNode* Solution::mergeKLists(vector<ListNode*> &arr) {
-    multiset<int> st;
-    for(auto l : arr) {
-    	while(l != NULL) {
-    		st.insert(l->val);
-    		l = l->next;
-    	}
+struct comp {
+   public:
+    bool operator()(ListNode *x, ListNode *y) {
+        return x->val > y->val;
     }
-    ListNode* head = new ListNode(0);
-    ListNode* ans = head;
-    for(auto ele : st) {
-    	ListNode* temp = new ListNode(ele);
-    	head->next = temp;
-    	head = head->next;
+};
+
+ListNode *Solution::mergeKLists(vector<ListNode *> &A) {
+    priority_queue<ListNode *, vector<ListNode *>, comp> pq;
+    for (const auto &ele : A) {
+        if (ele != nullptr) {
+            pq.push(ele);
+        }
     }
-    return ans->next;
+    ListNode *dummy = new ListNode(0);
+    ListNode *node = dummy;
+    while (!pq.empty()) {
+        ListNode *curr = pq.top();
+        pq.pop();
+        node->next = new ListNode(curr->val);
+        node = node->next;
+        if (curr->next != nullptr) {
+            pq.push(curr->next);
+        }
+    }
+    return dummy->next;
 }
