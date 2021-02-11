@@ -4,11 +4,47 @@
  *     int val;
  *     TreeNode *left;
  *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Codec {
+class Solution {
    public:
+    vector<TreeNode *> findDuplicateSubtrees(TreeNode *root) {
+        dfs(root);
+        vector<TreeNode *> ans;
+        for (const auto &ele : mp) {
+            if (ele.second > 1) {
+                ans.push_back(deserialize(ele.first));
+            }
+        }
+        return ans;
+    }
+
+   private:
+    unordered_map<string, int> mp;
+
+    void dfs(TreeNode *root) {
+        if (root == nullptr) {
+            return;
+        }
+        string s = serialize(root);
+        mp[s]++;
+        dfs(root->left);
+        dfs(root->right);
+    }
+
+    vector<string> splitData(const string &s) {
+        istringstream ss(s);
+        string word;
+        vector<string> ans;
+        while (getline(ss, word, ',')) {
+            ans.push_back(word);
+        }
+        return ans;
+    }
+
     string serialize(TreeNode *root) {
         if (root == nullptr) {
             return "";
@@ -54,16 +90,5 @@ class Codec {
             index++;
         }
         return root;
-    }
-
-   private:
-    vector<string> splitData(const string &s) {
-        istringstream ss(s);
-        string word;
-        vector<string> ans;
-        while (getline(ss, word, ',')) {
-            ans.push_back(word);
-        }
-        return ans;
     }
 };
