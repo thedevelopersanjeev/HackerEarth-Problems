@@ -1,7 +1,8 @@
-#pragma GCC target("avx2")
 #pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
 #pragma GCC optimize("Ofast")
+#pragma GCC optimize("unroll-loops")
+#pragma GCC optimize("no-stack-protector")
+#pragma GCC optimize("fast-math")
 
 #include <bits/stdc++.h>
 
