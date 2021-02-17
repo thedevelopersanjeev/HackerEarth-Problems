@@ -1,25 +1,39 @@
 class Solution {
-  public:
-	string minWindow(string s, string t) {
-		unordered_map<char, int> mp;
-		for (const auto &ch : t) {
-			mp[ch]++;
-		}
-		int cnt = t.size(), i = 0, j = 0, len = 1e9, st = 0;
-		while (j < s.size()) {
-			if (mp[s[j++]]-- > 0) {
-				cnt--;
-			}
-			while (cnt == 0) {
-				if (j - i < len) {
-					len = j - i;
-					st = i;
-				}
-				if (mp[s[i++]]++ == 0) {
-					cnt++;
-				}
-			}
-		}
-		return len == 1e9 ? "" : s.substr(st, len);
-	}
+   public:
+    string minWindow(string s, string t) {
+        unordered_map<char, int> mapTwo, mapOne;
+        for (const auto &ch : t) {
+            mapTwo[ch]++;
+        }
+        int matchCount = 0, i = -1, j = -1, n = s.size(), m = t.size();
+        string ans = "";
+        while (true) {
+            bool flagOne = false, flagTwo = false;
+            while (i < n - 1 && matchCount < m) {
+                i++;
+                mapOne[s[i]]++;
+                if (mapOne[s[i]] <= mapTwo[s[i]]) {
+                    matchCount++;
+                }
+                flagOne = true;
+            }
+
+            while (j < i && matchCount == m) {
+                string temp = s.substr(j + 1, i - j);
+                if (ans.size() == 0 || ans.size() > temp.size()) {
+                    ans = temp;
+                }
+                j++;
+                mapOne[s[j]]--;
+                if (mapOne[s[j]] < mapTwo[s[j]]) {
+                    matchCount--;
+                }
+                flagTwo = true;
+            }
+            if (flagOne == false && flagTwo == false) {
+                break;
+            }
+        }
+        return ans;
+    }
 };
