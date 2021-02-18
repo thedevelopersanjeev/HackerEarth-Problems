@@ -11,34 +11,38 @@
 class Solution {
    public:
     ListNode* reverseKGroup(ListNode* head, int k) {
+        if (head == nullptr || head->next == nullptr || k == 1) {
+            return head;
+        }
         ListNode* dummy = new ListNode();
-        ListNode* node = dummy;
-        stack<int> st;
+        ListNode* start = dummy;
+        dummy->next = head;
+        int cnt = 0;
         while (head != nullptr) {
-            int cnt = k;
-            while (head != nullptr && cnt--) {
-                st.push(head->val);
+            cnt++;
+            if (cnt % k == 0) {
+                start = reverseLinkedList(start, head->next);
+                head = start->next;
+            } else {
                 head = head->next;
-            }
-            if (head == nullptr && cnt > 0) {
-                vector<int> temp;
-                while (!st.empty()) {
-                    temp.push_back(st.top());
-                    st.pop();
-                }
-                reverse(temp.begin(), temp.end());
-                for (const auto& ele : temp) {
-                    node->next = new ListNode(ele);
-                    node = node->next;
-                }
-                break;
-            }
-            while (!st.empty()) {
-                node->next = new ListNode(st.top());
-                st.pop();
-                node = node->next;
             }
         }
         return dummy->next;
+    }
+
+   private:
+    ListNode* reverseLinkedList(ListNode* start, ListNode* end) {
+        ListNode* prev = start;
+        ListNode* curr = start->next;
+        ListNode* first = curr;
+        while (curr != end) {
+            ListNode* next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        start->next = prev;
+        first->next = curr;
+        return first;
     }
 };
