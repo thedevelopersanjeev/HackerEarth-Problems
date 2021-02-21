@@ -64,7 +64,7 @@ void solve(int tc) {
 signed main() {
     int tc = 1;
     read(tc);
-    for (int curr = 1; curr <= tc; curr++) {
+    for (int curr = 1; curr <= tc; ++curr) {
         solve(curr);
     }
     return 0;
