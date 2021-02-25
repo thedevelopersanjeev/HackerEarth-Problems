@@ -62,6 +62,30 @@ void solve(int tc) {
     read(N, M);
     string S, T;
     read(S, T);
+    vector<int> L(M, 0), R(M, 0);
+    int i = 0, j = 0;
+    while (i < M) {
+        while (T[i] != S[j]) {
+            ++j;
+        }
+        L[i] = j;
+        ++i;
+        ++j;
+    }
+    i = M - 1, j = N - 1;
+    while (i >= 0) {
+        while (T[i] != S[j]) {
+            --j;
+        }
+        R[i] = j;
+        --i;
+        --j;
+    }
+    int ans = 1;
+    for (int i = 1; i < M; ++i) {
+        ans = max(ans, R[i] - L[i - 1]);
+    }
+    write(ans);
 }
 
 signed main() {

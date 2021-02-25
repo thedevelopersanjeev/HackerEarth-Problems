@@ -46,7 +46,7 @@ void readContainer(T &t) {
 template <typename T>
 void writeContainer(T &t) {
     for (const auto &e : t) {
-        write(e, " ");
+        write(e, "");
     }
     write("\n");
 }
@@ -60,6 +60,36 @@ auto speedup = []() {
 void solve(int tc) {
     int A, B, K;
     read(A, B, K);
+    int N = A + B;
+    vector<char> S(N, '0'), P(N, '0');
+    if (K == 0) {
+        for (int i = 0; i < B; i++) {
+            S[i] = P[i] = '1';
+        }
+        write("Yes\n");
+        writeContainer(S);
+        writeContainer(P);
+        return;
+    }
+    if (A == 0 || B == 1 || K >= N - 1) {
+        write("No\n");
+        return;
+    }
+    S[0] = P[0] = S[1] = P[1 + K] = '1';
+    B -= 2;
+    int i = 2;
+    while (B > 0 && i < N) {
+        if (i == 1 + K) {
+            i++;
+            continue;
+        }
+        S[i] = P[i] = '1';
+        i++;
+        B--;
+    }
+    write("Yes\n");
+    writeContainer(S);
+    writeContainer(P);
 }
 
 signed main() {
